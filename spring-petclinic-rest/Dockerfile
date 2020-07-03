@@ -2,14 +2,6 @@ FROM openjdk:8u151-jdk
 
 WORKDIR /app
 
-ARG url
-ARG username
-ARG password
-
-ENV url=$url
-ENV username=$username
-ENV password=$password
-
 COPY . /app
 
 RUN apt-get install git && \
