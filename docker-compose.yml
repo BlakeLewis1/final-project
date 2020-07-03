@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  backend:
+    image: jasonsinclair95/group-project:backend
+    ports:
+      - 9966:9966
+    container_name: backend
+  
+  frontend:
+    image: jasonsinclair95/group-project:frontend
+    depends_on:
+      - backend
+    ports:
+      - 4200:4200
+    container_name: frontend
