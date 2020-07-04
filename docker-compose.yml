@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   nginx:
-    image: amranlab/nginx
+    image: jasonsinclair95/group-project:nginx
     ports:
       - 80:80
     container_name: nginx
