@@ -1,26 +1,26 @@
 version: "3.3"
 services:
+  nginx:
+    image: amranlab/nginx
+    ports:
+      - 80:80
+    container_name: nginx
+
   backend:
-    build: ./spring-petclinic-rest
+    image: jasonsinclair95/group-project:backend
     ports:
       - 9966:9966
     container_name: backend
   
   frontend:
-    build: ./spring-petclinic-angular
+    image: jasonsinclair95/group-project:frontend
     depends_on:
       - backend
     ports:
       - 4200:4200
     container_name: frontend
   
-  mysql-petclinic: 
-    image: mysql:5.7.8
-    ports: 
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: petclinic
-      MYSQL_DATABASE: petclinic
+  
 
   
     
