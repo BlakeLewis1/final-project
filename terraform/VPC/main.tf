@@ -26,6 +26,7 @@ resource "aws_subnet" "PubnetB" {
     cidr_block = var.public_cidr_B
     availability_zone = data.aws_availability_zones.available.names[1]
     vpc_id = aws_vpc.projectvpc.id
+  
 
     tags = {
         Name = "PubnetB"

@@ -1,6 +1,7 @@
 provider "aws" {
-  region                  = "eu-west-1"
+  region                  = var.region
   shared_credentials_file = "~/.aws/credentials"
+  version = "~> 2.0"
 }
 
 module "vpc" {
