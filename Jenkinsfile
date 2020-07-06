@@ -10,15 +10,15 @@ pipeline{
             steps{
                 sh 'echo "installing docker locally"'
                 sh './script/docker.sh'
-                sh 'echo "installing kubernetes locally'
+                sh 'echo "installing kubernetes locally"'
                 sh './script/kubernetes.sh'
-                sh 'echo "rebuilding images and pushing to docker hub'
+                sh 'echo "rebuilding images and pushing to docker hub"'
                 sh './script/robust.sh'
             }
         }    
         stage('depoly application through kubernetes') {
             steps{
-                sh 'echo "deploying application'
+                sh 'echo "deploying application"'
                 sh './script/deploy.sh'   
             }
         }
