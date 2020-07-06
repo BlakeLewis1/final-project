@@ -3,7 +3,7 @@ pipeline{
     stages {
         stage("Enable my script folder to be executable") {
             steps {
-               sh 'chmod 775 ./scripts/*'
+               sh 'chmod 775 ./script/*'
             }
         }
         stage(' Prepair enviornment') {
@@ -16,7 +16,7 @@ pipeline{
                 sh './script/robust.sh'
             }
         }    
-        stage('depoly application through docker compose') {
+        stage('depoly application through kubernetes') {
             steps{
                 sh 'echo "deploying application'
                 sh './script/deploy.sh'   
