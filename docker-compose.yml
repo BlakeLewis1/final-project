@@ -7,12 +7,13 @@ services:
     container_name: nginx
 
   backend:
-    image: jasonsinclair95/group-project:backend
+    build: ./spring-petclinic-rest
+#   image: jasonsinclair95/group-project:backend
     ports:
       - 9966:9966
     container_name: backend
   
-  frontend:
+  frontend:    
     image: jasonsinclair95/group-project:frontend
     depends_on:
       - backend

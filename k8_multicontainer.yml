@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petclinic
+  labels: 
+    app: petclinic
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: petclinic
+  template:
+    metadata:
+      labels:
+        app: petclinic
+    spec:
+      containers:
+      - name: nginx
+        image: jasonsinclair95/group-project:nginx
+        ports:
+        - containerPort: 80
+      - name: frontend
+        image: jasonsinclair95/group-project:frontend
+      - name: backend
+        image: jasonsinclair95/group-project:backend
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: petclinic-service
+spec:
+  type: ClusterIP
+  selector:
+    app: petclinic
+  ports:
+  - protocol: TCP
+    port: 80             #service running on port 8080
+    targetPort: 80 
