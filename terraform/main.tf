@@ -21,6 +21,7 @@ module "ec2" {
 
 module "eks" {
   source = "./EKS"
+  region = var.region
   subnets = ["${module.vpc.subnet_A_id}", "${module.vpc.subnet_B_id}"]
   sg = ["${module.sg.aws_sg_id}"]
 }
