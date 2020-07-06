@@ -21,6 +21,7 @@ variable "vpc_security_group_ids" {
     default = "default value"
 }
 
+
 variable "vpc_id" {
     default = "default value"
 }
