@@ -136,7 +136,7 @@ The QA Consultants for helping with our Development and teaching the required sk
 
 ##  Author
 
-Jason sinclair, Misbah Mehmood, Jonathan Vaughan, Blake Lewis
+Jason sinclair, Misbah Mehmood, Jonathan Vaughan, Blake Lewis, Tom Petty
 
 ## MIT License
 
