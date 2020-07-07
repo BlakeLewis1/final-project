@@ -1,6 +1,7 @@
 # final-project-team3
 
 ---
+![image](https://user-images.githubusercontent.com/64256460/86803169-a75bc900-c06d-11ea-9b89-154f49ddd620.png)
 
 ### Contents
 1. [Executive Summary & Critical Review](#Executive-Summary-&-Critical-Review)
