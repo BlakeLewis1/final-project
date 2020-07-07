@@ -18,3 +18,8 @@ variable "public_cidr_B" {
     description = "cidr for public subnet B"
     default = "10.0.2.0/24"
 }
+
+variable "jenkins_cidr" {
+    description = "cidr for jenkins"
+    default = "10.0.3.0/24"
+}

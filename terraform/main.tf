@@ -16,7 +16,7 @@ module "sg" {
 module "ec2" {
   source = "./EC2"
   public_subnet_id       = module.vpc.subnet_A_id
-  jenkins_subnet_id       = module.vpc.subnet_B_id
+  jenkins_subnet_id       = module.vpc.jenkins_id
   vpc_security_group_ids = module.sg.aws_sg_id
 }
 

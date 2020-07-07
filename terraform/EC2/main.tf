@@ -6,11 +6,7 @@ resource "aws_instance" "ec2" {
     vpc_security_group_ids = [var.vpc_security_group_ids]
     associate_public_ip_address = true
     user_data = data.template_file.installing_jenkins.rendered
-    
-
-
-    
-
+  
     tags = {
         Name = "Project EC2"
 }
@@ -28,11 +24,7 @@ resource "aws_instance" "jenkins" {
     vpc_security_group_ids = [var.jenkins_security_group_ids]
     associate_public_ip_address = true
     user_data = data.template_file.installing_kubernetes.rendered
-    
-
-
-    
-
+  
     tags = {
         Name = "Jenkins EC2"
 }

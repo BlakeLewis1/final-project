@@ -10,3 +10,6 @@ output "subnet_A_id" {
 output "subnet_B_id" {
     value = aws_subnet.PubnetB.id
 }
+
+output "jenkins_id" {
+    value = aws_subnet.jenkins_subnet.id
