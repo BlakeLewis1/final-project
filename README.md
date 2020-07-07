@@ -47,7 +47,9 @@
 The aim of this group project was to plan, design and implement a solution for automating the development workflows and deployments of two external applications. 
 * Spring-Petclinic-Angular - frontend Client of the application, Developed with angular js
 * Spring-Petclinic-Rest - backend API of the application, Developed with Java.
+
 Upon Deployment a set of predefined objectives regarding what we have learnt must be considered.
+
 * What resources/services will work best for the deployment with clear comparison and justification.
 * Multiple environment support in order for a developer to test new features before merging to the main branch.
 * Deployment of a robust system. This will allow improvements to be made without destroying the application and effecting the experience of the user.
