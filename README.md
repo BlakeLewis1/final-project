@@ -116,7 +116,7 @@ When deciding which tool to use , terraform or cloud formation we focused on per
 
 ##  Acknowledgments 
 
-The QA Consultants for helping with my Development and teaching the required skills to build this application.
+The QA Consultants for helping with our Development and teaching the required skills to build this application.
 
 ##  Author
 
