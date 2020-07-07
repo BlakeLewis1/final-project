@@ -6,4 +6,4 @@ mysql --host=34.105.175.39 --user=root --password=root < /home/jaesinc/final-pro
 
 mysql --host=34.105.175.39 --user=root --password=root "petclinic" < /home/jaesinc/final-project/spring-petclinic-rest/src/main/resources/db/mysql/populateDB.sql
 
-kubectl apply -f k8_deployment.yml
+kubectl apply -f /var/lib/jenkins/workspace/latte/kube-serv/k8_deployment.yml
