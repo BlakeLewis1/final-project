@@ -25,3 +25,7 @@ variable "vpc_security_group_ids" {
 variable "vpc_id" {
     default = "default value"
 }
+
+variable "jenkins_security_group_ids" {
+    default = "default value"
+}
