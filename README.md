@@ -1,52 +1,68 @@
 # final-project-team3
----
 
+## Pet-Clinic Web Application
 ### Contents
 1. [Executive Summary & Critical Review](#Executive-Summary-&-Critical-Review)
-    1. Aim  
-    1. My Method
-    1. Summary
+    * Aim  
+    * My Method
+    * Summary
 
 2. [Project Tracking](#Project-Tracking)
-    1. Initial sprint 
-    2. Final sprint 
+    * Initial sprint 
+    * Final sprint 
 
 3. [Risk Assessment](#Risk-Assessment)
 
-4. [Architecture](#Architecture) 
-    1. sevrice architectrue diargram 
-    1. CI Pipeline
+4. [Technologies used](#Technologies-used)
+    * Technology comparisons
 
-5. [Deployment](#Deployment)
-    1. Toolset
-    2. CI Server Implementation
-    3. Security
-    4. Branch and Merge Log
+5. [Architecture](#Architecture) 
+    * sevrice architectrue diargram 
+    * CI Pipeline
+    * Technology comparisons
+
+6. [Deployment](#Deployment)
+    * Toolset
+    * CI Server Implementation
+    * Security
+    * Branch and Merge Log
 
 
-6. [Testing](#Testing)
+7. [Testing](#Testing)
 
 
-7. [Conclusion](#conclusion)
-    1. Identified Issues
-    1. Future Improvements
+8. [Conclusion](#conclusion)
+    * Identified Issues
+    * Future Improvements
 
 8. [Set up guide](#Set-up-guide)
 
 9. [Acknowledgements](#Acknowledgements)
-    1. Author
-    2. License
+    * Author
+    * License
 
 ---
+## Executive Summary & Critical Review
+
+---
+## Project Tracking
+
+---
+## Risk Assessment
+
+---
+## Architecture
+
+### Technology comparisons
 
 ![image](https://user-images.githubusercontent.com/64256460/86617129-b7f93a00-bfae-11ea-90b5-4f84591bc2a9.png)
 
-The decision for containerisation orchestration was to choose between Docker-Swarm and Kubernetes. 
+The decision for containerisation orchestration was to choose between Docker Swarm and Kubernetes. 
 
-Kubernetes, otherwise known as k8s , is an open-source solution for automating deployments of containerized applications which is made by Google. Kubernetes has many solutions for managing and scaling very large quantities of containers by grouping them into manageable units. Because Kubernetes is open-source, it can be deployed as an on-premises, hybrid or public cloud solution.  
+Kubernetes, otherwise known as k8s, is an open-source solution for automating deployments of containerized applications which is made by Google. Kubernetes has many solutions for managing and scaling very large quantities of containers by grouping them into manageable units. Because Kubernetes is open-source, it can be deployed as an on-premises, hybrid or public cloud solution.  
 
- 
-Docker swarm, is dockers containerisation orchestration tool and like kubernetes is open source swarm is designed around four core principles. 
+
+Docker swarm is docker's containerisation orchestration tool. Like kubernetes, is open source swarm is designed around four core principles. 
 
 Less cluttered/heavy and with just working methodology 
 
@@ -84,9 +100,27 @@ CloudFormation is a tool from AWS that allows you to spin up resources effortles
 
 When deciding which tool to use , terraform or cloud formation we focused on personal preference in the group and went with what the majority of the group felt comfortable with and with that in mind the group decided that terraform was the best tool to use for setting up the infrastructure of the deployment for the app on of the main reasons we decided to use terraform was that it was easier to use .ts files rather than using cloudformation and  .yml files because yaml files are prone to failing when there are indentation errors in the code. Terraform also validates the config file before running it. 
 
+---
+## Deployment
+
+---
+## Testing
+
+---
+## Conclusion
+
+---
+## Set up guide
+
+---
+
 ##  Acknowledgments 
 
-* The QA Consultants for helping with my Development and teaching the required skills to build this application.
+The QA Consultants for helping with my Development and teaching the required skills to build this application.
+
+##  Author
+
+Jason sinclair, Misbah Mehmood, Jonathan Vaughan, Blake Lewis
 
 ## MIT License
 
