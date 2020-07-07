@@ -28,6 +28,7 @@
 ---
 
 ![image](https://user-images.githubusercontent.com/64256460/86617129-b7f93a00-bfae-11ea-90b5-4f84591bc2a9.png)
+
 The decision for containerisation orchestration was to choose between Docker-Swarm and Kubernetes. 
 
 Kubernetes, otherwise known as k8s , is an open-source solution for automating deployments of containerized applications which is made by Google. Kubernetes has many solutions for managing and scaling very large quantities of containers by grouping them into manageable units. Because Kubernetes is open-source, it can be deployed as an on-premises, hybrid or public cloud solution.  
