@@ -51,8 +51,8 @@ resource "aws_eks_node_group" "t3_nodegroup" {
   subnet_ids      = var.subnets
 
   scaling_config {
-    desired_size = 1
-    max_size     = 2
+    desired_size = 2
+    max_size     = 3
     min_size     = 1
   }
 
@@ -93,7 +93,7 @@ resource "aws_iam_role_policy_attachment" "EC2ContainerRegistryReadOnly" {
   role       = aws_iam_role.t3_nodesrole.name
 }
 
-resource "aws_iam_role_policy_attachment" "AmazonEC2FullAccess" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
-  role       = aws_iam_role.t3_nodesrole.name
-}
+#resource "aws_iam_role_policy_attachment" "AmazonEC2FullAccess" {
+ # policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+  #role       = aws_iam_role.t3_nodesrole.name
+#}

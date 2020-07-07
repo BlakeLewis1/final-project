@@ -5,12 +5,12 @@ variable "ami" {
 
 variable "type" {
     description = "instance size"
-    default = "t2.micro"
+    default = "t2.medium"
 }
 
 variable "key_name" {
     description = "key pair to SSH into instance"
-    default = "awskey"
+    default = "AWSKey"
 }
 
 variable "public_subnet_id" {
@@ -21,6 +21,11 @@ variable "vpc_security_group_ids" {
     default = "default value"
 }
 
+
 variable "vpc_id" {
+    default = "default value"
+}
+
+variable "jenkins_security_group_ids" {
     default = "default value"
 }

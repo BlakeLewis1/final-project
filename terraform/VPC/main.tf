@@ -16,6 +16,7 @@ resource "aws_subnet" "PubnetA" {
     cidr_block = var.public_cidr_A
     availability_zone = data.aws_availability_zones.available.names[0]
     vpc_id = aws_vpc.projectvpc.id
+    map_public_ip_on_launch = true
 
     tags = {
         Name = "PubnetA"
@@ -26,6 +27,19 @@ resource "aws_subnet" "PubnetB" {
     cidr_block = var.public_cidr_B
     availability_zone = data.aws_availability_zones.available.names[1]
     vpc_id = aws_vpc.projectvpc.id
+    map_public_ip_on_launch = true
+  
+
+    tags = {
+        Name = "PubnetB"
+    }
+}
+
+resource "aws_subnet" "jenkins_subnet" {
+    cidr_block = var.public_cidr_B
+    availability_zone = data.aws_availability_zones.available.names[1]
+    vpc_id = aws_vpc.projectvpc.id
+    map_public_ip_on_launch = true
   
 
     tags = {

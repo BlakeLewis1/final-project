@@ -5,3 +5,7 @@ variable "sg" {
 variable "subnets" {
     default = "default value"
 }
+
+variable "region" {
+    default = "default value"
+}
