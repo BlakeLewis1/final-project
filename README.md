@@ -7,23 +7,35 @@
     1. My Method
     1. Summary
 
-2. [Architecture](#Architecture) 
-    1. Database Structure - CRD & SQL Tables
+2. [Project Tracking](#Project-Tracking)
+    1. Initial sprint 
+    2. Final sprint 
+
+3. [Risk Assessment](#Risk-Assessment)
+
+4. [Architecture](#Architecture) 
+    1. sevrice architectrue diargram 
     1. CI Pipeline
 
-3. [Project Tracking](#Project-Tracking)
+5. [Deployment](#Deployment)
+    1. Toolset
+    2. CI Server Implementation
+    3. Security
+    4. Branch and Merge Log
 
-4. [Testing](#Testing)
 
-5. [Risk Assessment](#Risk-Assessment)
+6. [Testing](#Testing)
 
-6. [Conclusion](#conclusion)
+
+7. [Conclusion](#conclusion)
     1. Identified Issues
     1. Future Improvements
 
-7. [Reference](#Reference)
+8. [Set up guide](#Set-up-guide)
 
-8. [license](#Mit-Licence)
+9. [Acknowledgements](#Acknowledgements)
+    1. Author
+    2. License
 
 ---
 
@@ -78,7 +90,7 @@ When deciding which tool to use , terraform or cloud formation we focused on per
 
 ## MIT License
 
-Copyright (c) 2020 BlakeLewis1
+Copyright (c) 2020 Group 3
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
