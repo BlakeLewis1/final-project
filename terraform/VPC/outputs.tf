@@ -13,3 +13,4 @@ output "subnet_B_id" {
 
 output "jenkins_id" {
     value = aws_subnet.jenkins_subnet.id
+}

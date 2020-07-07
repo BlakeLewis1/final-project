@@ -17,6 +17,9 @@ variable "public_subnet_id" {
     default = "default value"
 }
 
+variable "jenkins_subnet_id" {
+    default = "default value"
+}
 variable "vpc_security_group_ids" {
     default = "default value"
 }
