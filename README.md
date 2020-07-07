@@ -53,7 +53,15 @@ Upon Deployment a set of predefined objectives regarding what we have learnt mus
 * Deployment of a robust system. This will allow improvements to be made without destroying the application and effecting the experience of the user.
 * Overall cost of Deployment will be documented using monthly estimates. Along this this how the Deployment can be made more efficiently. 
 ### Our Method
+The External applications work in a way that the frontend will communicate with the backend and request data. this data is then displayed on the frontend page. For this to work the group has utilised the following architecture.
+* IAAS - Terraform to create the AWS ecosystem and Configure the environment of the Virtual machines.
+* EKS to orchestrate the containers which will run the applications.
+* CI Server - Jenkins functioning as pipeline with Webhooks from the version control GIt Hub, to trigger builds.
+
+
+
 ### Summary 
+
 ---
 ## Project Tracking
 
