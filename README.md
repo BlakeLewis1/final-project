@@ -1,5 +1,33 @@
 # final-project-team3
 
+---
+
+### Contents
+1. [Executive Summary & Critical Review](#Executive-Summary-&-Critical-Review)
+    1. Aim  
+    1. My Method
+    1. Summary
+
+2. [Architecture](#Architecture) 
+    1. Database Structure - CRD & SQL Tables
+    1. CI Pipeline
+
+3. [Project Tracking](#Project-Tracking)
+
+4. [Testing](#Testing)
+
+5. [Risk Assessment](#Risk-Assessment)
+
+6. [Conclusion](#conclusion)
+    1. Identified Issues
+    1. Future Improvements
+
+7. [Reference](#Reference)
+
+8. [license](#Mit-Licence)
+
+---
+
 ![image](https://user-images.githubusercontent.com/64256460/86617129-b7f93a00-bfae-11ea-90b5-4f84591bc2a9.png)
 The decision for containerisation orchestration was to choose between Docker-Swarm and Kubernetes. 
 
