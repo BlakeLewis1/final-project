@@ -36,7 +36,7 @@ resource "aws_subnet" "PubnetB" {
 }
 
 resource "aws_subnet" "jenkins_subnet" {
-    cidr_block = var.public_cidr_B
+    cidr_block = var.jenkins_cidr
     availability_zone = data.aws_availability_zones.available.names[1]
     vpc_id = aws_vpc.projectvpc.id
     map_public_ip_on_launch = true

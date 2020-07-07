@@ -36,6 +36,7 @@ resource "aws_eks_cluster" "t3_eks" {
     subnet_ids = var.subnets
     endpoint_private_access = false
     endpoint_public_access = true
+    public_access_cidrs = ["0.0.0.0/0"]
   }
 
   depends_on = [

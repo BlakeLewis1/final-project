@@ -18,6 +18,7 @@ module "ec2" {
   public_subnet_id       = module.vpc.subnet_A_id
   jenkins_subnet_id       = module.vpc.jenkins_id
   vpc_security_group_ids = module.sg.aws_sg_id
+  jenkins_security_group_ids = module.sg.jenkins_security_group_ids
 }
 
 module "eks" {
@@ -26,8 +27,3 @@ module "eks" {
   subnets = ["${module.vpc.subnet_A_id}", "${module.vpc.subnet_B_id}"]
   sg = ["${module.sg.aws_sg_id}"]
 }
-
-#module "RDS" {
- # source = ./RDS
-
-#}
