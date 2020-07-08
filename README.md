@@ -134,6 +134,7 @@ CloudFormation is a tool from AWS that allows you to spin up resources effortles
 
 When deciding which tool to use , terraform or cloud formation we focused on personal preference in the group and went with what the majority of the group felt comfortable with and with that in mind the group decided that terraform was the best tool to use for setting up the infrastructure of the deployment for the app on of the main reasons we decided to use terraform was that it was easier to use .ts files rather than using cloudformation and  .yml files because yaml files are prone to failing when there are indentation errors in the code. Terraform also validates the config file before running it. 
 
+![](Documents/Cipipline.png)
 ---
 ## Deployment
 
