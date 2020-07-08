@@ -30,6 +30,6 @@ spec:
       hostname: frontend
       containers:
       - name: frontend
-        image: jasonsinclair95/group-project:backend
+        image: jasonsinclair95/group-project:frontend
         ports:
         - containerPort: 4200
