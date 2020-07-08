@@ -16,12 +16,10 @@ pipeline{
                 sh './script/robust.sh'
             }
         }    
-        stage(' Prepair enviornment') {
+        stage(' Testing Enviornment') {
             steps{
                 sh 'echo "testing back end"'
                 sh './script/backtest.sh'
-                sh 'echo "frontend"'
-                sh './script/fronttest.sh'
             }
         }
         stage('depoly application through kubernetes') {

@@ -2,9 +2,9 @@
 . ~/.bashrc
 sudo apt install mysql-client-core-8.0
 
-#mysql --host=34.105.175.39 --user=root --password=root < /home/jaesinc/final-project/spring-petclinic-rest/src/main/resources/db/mysql/initDB.sql
+#mysql --host=34.105.175.39 --user=root --password=root < /home/ubuntu/final-project/spring-petclinic-rest/src/main/resources/db/mysql/initDB.sql
 
-#mysql --host=34.105.175.39 --user=root --password=root "petclinic" < /home/jaesinc/final-project/spring-petclinic-rest/src/main/resources/db/mysql/populateDB.sql
+#mysql --host=34.105.175.39 --user=root --password=root "petclinic" < /home/ubuntu/final-project/spring-petclinic-rest/src/main/resources/db/mysql/populateDB.sql
 aws eks update-kubeconfig --name t3_eks
 
 
@@ -15,6 +15,4 @@ sleep 20
 kubectl apply -f /home/ubuntu/final-project/Kubernetes/k8_nginx.yaml
 
 
-#mysql --host=34.105.175.39 --user=root --password=root < /home/jaesinc/final-project/spring-petclinic-rest/src/main/resources/db/mysql/initDB.sql
-#mysql -h arn:aws:rds:eu-west-1:827564016107:db:database-1 -u admin -p < /home/ubuntu/final-project/spring-petclinic-rest/src/main/resources/db/mysql/initDB.sql
 
