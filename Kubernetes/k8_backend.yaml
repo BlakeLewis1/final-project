@@ -31,6 +31,6 @@ spec:
       hostname: backend
       containers:
       - name: backend
-        image: jasonsinclair95/group-project:backend
+        image: jasonsinclair95/goup3:backend
         ports:
         - containerPort: 9966
