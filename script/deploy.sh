@@ -9,9 +9,9 @@ aws eks update-kubeconfig --name t3_eks
 
 
 kubectl apply -f /home/ubuntu/final-project/Kubernetes/k8_backend.yaml
-sleep 10
+sleep 20
 kubectl apply -f /home/ubuntu/final-project/Kubernetes/k8_frontend.yaml
-sleep 10
+sleep 20
 kubectl apply -f /home/ubuntu/final-project/Kubernetes/k8_nginx.yaml
 
 
