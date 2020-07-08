@@ -8,6 +8,16 @@
     * Summary
 
 2. [Project Tracking](#Project-Tracking)
+    * Initial Trello Board 
+![image1](https://user-images.githubusercontent.com/64256460/86902655-2ac8f900-c106-11ea-8c4b-cba5f5c0c260.png)
+    * Trello board after 2nd interval:
+![image2](https://user-images.githubusercontent.com/64256460/86902290-ab3b2a00-c105-11ea-824c-98c8e7c61ffd.png)
+    * Trello board after 3rd interval:
+![image3](https://user-images.githubusercontent.com/64256460/86905837-901ee900-c10a-11ea-8f32-0f9da5630e7c.png)
+      we included a new column for issues with the project so that these could be seen by the group and therefore be able tackle more specific issues with development 
+    * Final Trello Board
+
+
     * Initial sprint 
     * Final sprint 
 
