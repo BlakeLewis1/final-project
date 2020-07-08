@@ -6,7 +6,7 @@ pipeline{
                sh 'chmod 775 ./script/*'
             }
         }
-        stage(' Prepair enviornment') {
+        stage(' Prepare environment') {
             steps{
                 sh 'echo "installing docker locally"'
                 sh './script/docker.sh'
@@ -16,7 +16,7 @@ pipeline{
                 sh './script/robust.sh'
             }
         }    
-        stage('depoly application through kubernetes') {
+        stage('deploy application through kubernetes') {
             steps{
                 sh 'echo "deploying application"'
                 sh './script/deploy.sh'   

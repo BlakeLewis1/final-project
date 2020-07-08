@@ -27,3 +27,12 @@ module "eks" {
   subnets = ["${module.vpc.subnet_A_id}", "${module.vpc.subnet_B_id}"]
   sg = ["${module.sg.aws_sg_id}"]
 }
+
+module "rds" {
+  source = "./RDS"
+  subnet_A  = module.vpc.subnet_A_id
+  subnet_B  = module.vpc.subnet_B_id
+  username = var.username
+  password = var.password
+  region   = var.region
+}

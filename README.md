@@ -77,24 +77,24 @@ The External applications work in a way that the frontend will communicate with 
 
 The decision for containerisation orchestration was to choose between Docker Swarm and Kubernetes. 
 
-Kubernetes, otherwise known as k8s, is an open-source solution for automating deployments of containerized applications which is made by Google. Kubernetes has many solutions for managing and scaling very large quantities of containers by grouping them into manageable units. Because Kubernetes is open-source, it can be deployed as an on-premises, hybrid or public cloud solution.  
+Kubernetes, otherwise known as k8s, is an open-source solution for automating deployments of containerized applications which is made by Google. Kubernetes has many solutions for managing and scaling very large quantities of containers by grouping them into manageable units. Because Kubernetes is open-source, it can be deployed as an on-premise, hybrid or public cloud solution.  
 
 
-Docker swarm is docker's containerisation orchestration tool. Like kubernetes, is open source swarm is designed around four core principles. 
+Docker swarm is docker's containerisation orchestration tool. Like kubernetes, Docker Swarm is open source and is designed around four core principles:
 
-Less cluttered/heavy and with just working methodology 
+* Less cluttered/heavy and with just working methodology 
 
-No Single Point of Failure option for Docker Swarm 
+* No Single Point of Failure option for Docker Swarm 
 
-Secure due to auto-generation of security certificates. 
+* Secure due to auto-generation of security certificates. 
 
-Compatibility with Backward versions easily. 
+* Compatibility with Backward versions easily. 
 
- The comparison 
+The comparison 
 
-There are fundamental differences even though both are containerisation orchestration tools.  
+There are fundamental differences, even though both are container orchestration tools.  
 
-Swarm focuses on ease of use with integration with Docker core components and also has an easier installation process while Kubernetes has a more manual installation process and remains open and modular. Kubernetes is also older than docker and therefore there are years of expert experience at hand to help.  
+Swarm focuses on ease of use with integration with Docker core components and also has an easier installation process, while Kubernetes has a more manual installation process and remains open and modular. Kubernetes is also older than docker and therefore there are years of expert experience at hand to help.  
 
 One of the main reasons why we decided to use kubernetes over docker swarm was that it was easier to update images by using kubectl apply to make updates to the image whilst with docker you would be required to build the image using docker image build  which would take up time rebuilding the image.  
 
