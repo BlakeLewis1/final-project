@@ -1,4 +1,4 @@
   variable "region" {
-  region = "europe-west2"
+  default = "europe-west2"
 }
 
