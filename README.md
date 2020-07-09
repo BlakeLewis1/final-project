@@ -69,13 +69,17 @@ The External applications work in a way that the frontend will communicate with 
 **Intial trello board :**
 
 ![image1](https://user-images.githubusercontent.com/64256460/86902655-2ac8f900-c106-11ea-8c4b-cba5f5c0c260.png)
-    **Trello board after 2nd interval :**
+In the intial trello this was one of the first things completed for the project along with the github repository in this image you can see how we have split up tasks between MOSCOW and you can also see the tasks being completed and the ones that are completed.
+
+**Trello board after 2nd interval :**
 
 ![image2](https://user-images.githubusercontent.com/64256460/86902290-ab3b2a00-c105-11ea-824c-98c8e7c61ffd.png)
-    **Trello board after 3rd interval :**
+In the second interval you can see that more tasks have been completed since the last interval and you can also see that there tasks that have been added to the in progress part of the trello
+
+**Trello board after 3rd interval :**
 
 ![image3](https://user-images.githubusercontent.com/64256460/86905837-901ee900-c10a-11ea-8f32-0f9da5630e7c.png)
-      we included a new column for issues with the project so that these could be seen by the group and therefore be able tackle more specific issues with development 
+we included a new column for issues with the project so that these could be seen by the group and therefore be able tackle more specific issues with development 
 
 **Final Trello Board :**
 
@@ -153,10 +157,27 @@ The External applications work in a way that the frontend will communicate with 
 
 This risk assessment displays the different possible risks that could occur during the development of our project the assessment is to be updated at different  time  intervals whilst developing our solution to be able to give an insight of how each risk progressed we have added a risk level which essentially is a sum of (**liklihood**) the possibility of the risk happening and (**impact**) the damage level the risk would have on the project if it did occur.
 
+we also ensured that we revisited the risk assessment and addressed any clear issues in the development one instance of this is when we revisited the cidr block risk and came up with a solution for it in the 3rd interval of the project which saw the liklihood fall dramatically.
 
 ---
 ## Architecture
 
+### architecture design 
+**initial architecture design**
+
+![iad](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/intial%20architecture%20design%20.png)
+
+**final architecture design**
+
+![ad](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/architecture%20design.png)
+
+we had to change our initial design to make sure that the database was able to be displayed correctly through the front end of the app to do this we employed a new solution for the app. this included utilising a gcp mysql instance to hold the database.
+
+We needed to utilise the gcp sql rather than using the amazon rds system as we encountered persistent issues with connections between front and back ends whilst attempting to use the amazon rds system.
+
+### CI Pipeline 
+
+![ci](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/CI%20Pipline.png)
 
 ### Technology comparisons
 
