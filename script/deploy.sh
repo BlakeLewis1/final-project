@@ -13,6 +13,3 @@ sleep 20
 kubectl apply -f /home/ubuntu/final-project/Kubernetes/k8_frontend.yaml
 sleep 20
 kubectl apply -f /home/ubuntu/final-project/Kubernetes/k8_nginx.yaml
-
-
-
