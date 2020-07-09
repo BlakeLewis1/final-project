@@ -223,13 +223,15 @@ An multi provider approach was considered due to the competitiveness of todays c
 
 ![](Documents/ProcessChainDiagram.png)
 
-to elaborate on some of the technologies used in the CI pipeline is as follows:
+To elaborate on some of the technologies used in the CI pipeline is as follows:
 
-GCP - to create the virtual environment and also set up the foundation of our Databases using MySQL.
-VS Code/Python - is an interpreter which allows better visualisation when building the flask application using python, in comparison to coding using google ssh.
-Trello board to keep track of the project progress.
-GitHub: allows the source code to be stored and also webhooks are created which trigger the Ci server to build/run the application.
-PyTest to test the application and produce a coverage report.
+* Microsoft Teams - to host our Daily Scrums.
+* Trello - Project Tracking tool. This tool was used to cerate ou sprints and alow the team to keep uptodate with what work is being done.
+* Terraform - to create the aws ecosystem along with a GCP Mysql Database. 
+* VS Code/P - is an interpreter which allows better visualisation when building the flask application using python, in comparison to coding using google ssh.
+* Trello board to keep track of the project progress.
+* GitHub: allows the source code to be stored and also webhooks are created which trigger the Ci server to build/run the application.
+* PyTest to test the application and produce a coverage report.
 
 ---
 ## Testing
