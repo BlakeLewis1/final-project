@@ -279,6 +279,15 @@ As you can see above the expected cost for the rest of the month at the time of 
 
 ---
 ## Conclusion
+In conclusion as a team we have been able to utilise the agile methodology and also the scrum 
+framework to successfully build our deployment for the pet clinic app. Examples of this include 
+starting every day with a daily scrum meeting and used sprint retrospectives at the end of the sprints and deciding upon actions for the next iteration therefore sticking to the scrums incremental nature.We also held mini sprint reviews to show how much progress was being made with the project.
+
+ After holding our final sprint retrospective provided evidence that using the scrum framework has enabled the group to be able to work efficiently by using sprints that were used to set out in sprint planning.
+
+whilst completing the project their were issues that we came across these were therefore added to the trello board in the form of issues however these were effectively our product backlog artifact, consequently this was to ensure that the team were aware of them and therefore were able to tackle these specific issues this helped the team to work more effectively 
+
+What we would do better in the future I would have liked to have the backlog properly documented in the README.md and be able to work
 
 ---
 ## Set up guide
