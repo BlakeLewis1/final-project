@@ -65,27 +65,119 @@ The External applications work in a way that the frontend will communicate with 
 ---
 ## Project Tracking
 
-    * Initial Trello Board 
+
+**Intial trello board :**
+
 ![image1](https://user-images.githubusercontent.com/64256460/86902655-2ac8f900-c106-11ea-8c4b-cba5f5c0c260.png)
-    * Trello board after 2nd interval:
+In the intial trello this was one of the first things completed for the project along with the github repository in this image you can see how we have split up tasks between MOSCOW and you can also see the tasks being completed and the ones that are completed.
+
+**Trello board after 2nd interval :**
+
 ![image2](https://user-images.githubusercontent.com/64256460/86902290-ab3b2a00-c105-11ea-824c-98c8e7c61ffd.png)
-    * Trello board after 3rd interval:
+In the second interval you can see that more tasks have been completed since the last interval and you can also see that there tasks that have been added to the in progress part of the trello
+
+**Trello board after 3rd interval :**
+
 ![image3](https://user-images.githubusercontent.com/64256460/86905837-901ee900-c10a-11ea-8f32-0f9da5630e7c.png)
-      we included a new column for issues with the project so that these could be seen by the group and therefore be able tackle more specific issues with development 
-    * Final Trello Board
+we included a new column for issues with the project so that these could be seen by the group and therefore be able tackle more specific issues with development 
+
+**Final Trello Board :**
+
+![image4](https://user-images.githubusercontent.com/64256460/86958257-c6348b00-c153-11ea-9c58-944453333d96.png)
 
 ---
 ## Risk Assessment
-[RA](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/Project%20RA%20-%20Sheet1.pdf)
 
-linked above is the risk assessment for the project for ease of viewing it is reccomended that you download the file.
 
-This risk assessment displays the different possible risks that could occur during the development of our project the assessment is to be updated at different  time  intervals whilst developing our solution to be able to give an insight of how each risk progressed we have added a risk level which essentially is a sum of (**liklihood**) the possibility of the risk happening and (**impact**) the damage level the risk would have on the project if it did occur.
+**initial interval 02/07/20 ~ 04/07/20**
 
+
+
+| Risk              | Risk Statment | Response Stratergy                                                                  | Objective                                         | likelihood   | Impact      | Risk Level |
+| :---------------- | :------------ | :---------------------------------------------------------------------------------- | :------------------------------------------------ | :---------: | :---------: | :--------: |
+| Kubernetes networking unsuccessful| The application wouldn't be able to deploy      | understand how k8s works                                                           | kubernetes enables the app to run                         | 80%   | High     | 90%         |
+| Exceeding the budget    | the resources used cost money to run    | use cost effective resources for deployment                               | keep the cost of deployment low                  | 50% | High        | 60%       |
+| Exceeding the time limit  | If we go over the time limit then the project will not pass   |Use the scrum feature of sprints to complete tasks                  | Split work up into intervals            | 25%     | High      | 30%    |
+| Exposed keys     | if keys are exposed , unauthorised access could occur   | maintain that best practises are used for version control    | maintain that best practises are used   | 70%| High        | 80%        |
+| Branch conflicts       | too many merge conflicts and deployment will be halted    | push working versions of code on to the master                  | make use of the branch feature in github correctly                 | 60%      | High     | 70%          |
+| Jenkins password exposed | if jenkins is exposed the app would be vunerable     | use best practices to keep passwords secure                              | ensure password is not exposed          | 40%    | High      | 50%          |
+| AWS sever exposed     | if exposed there is a risk that the app could be deleted     | make sure users with access are authorised                                        | Make IAM Users for team members only   | 20%     | High       | 25%          |
+|  Docker images not updating  | if it happens the rolling update isnt working   | make sure that docker images are updated  | app works correctly with data          | 70%      | High        | 80%         |
+| Jenkins pipeline   | if this occurs the app wont run correctly     | add a github webhook | Have a webhook that works   | 40%    | High     | 50%         |
+| Subnet cidr id taken  | if this occurs the app wont work    | use a distinctive cidr id                    | make sure the eks cluster is able to communicate   | 60%   | High        | 70%         |
+|
+
+**2nd Interval 04/07/20 ~ 06/07/20**
+
+| Risk              | Risk Statment | Response Stratergy                                                                   | Objective                                         | likelihood   | Impact      | Risk Level |
+| :---------------- | :------------ | :---------------------------------------------------------------------------------- | :------------------------------------------------ | :---------: | :---------: | :--------: |
+| Kubernetes networking unsuccessful| The application wouldn't be able to deploy      | understand how k8s works                                                           | kubernetes enables the app to run                         | 70%   | High     | 80%         |
+| Exceeding the budget    | the resources used cost money to run    | use cost effective resources for deployment                               | keep the cost of deployment low                  | 40% | High        | 50%       |
+| Exceeding the time limit  | If we go over the time limit then the project will not pass   |Use the scrum feature of sprints to complete tasks                  | Split work up into intervals            | 10%     | High      | 10%    |
+| Exposed keys     | if keys are exposed , unauthorised access could occur   | maintain that best practises are used for version control    | maintain that best practises are used   | 50%| High        | 60%        |
+| Branch conflicts       | too many merge conflicts and deployment will be halted    | push working versions of code on to the master                  | make use of the branch feature in github correctly                 | 40%      | High     | 50%          |
+| Jenkins password exposed | if jenkins is exposed the app would be vunerable     | use best practices to keep passwords secure                              | ensure password is not exposed          | 30%    | High      | 35%          |
+| AWS sever exposed     | if exposed there is a risk that the app could be deleted     | make sure users with access are authorised                                        | Make IAM Users for team members only   | 10%     | High       | 10%          |
+|  Docker images not updating  | if it happens the rolling update isnt working   | make sure that docker images are updated  | app works correctly with data          | 60%      | High        | 70%         |
+| Jenkins pipeline   | if this occurs the app wont run correctly     | add a github webhook | Have a webhook that works   | 40%    | High     | 50%         |
+| Subnet cidr id taken  | if this occurs the app wont work    | use a distinctive cidr id                    | make sure the eks cluster is able to communicate   | 55%   | High        | 65%         |
+|
+
+**3rd Interval 06/07/20 ~ 08/07/20**
+
+| Risk              | Risk Statment | Response Stratergy                                                                   | Objective                                         | likelihood   | Impact      | Risk Level |
+| :---------------- | :------------ | :---------------------------------------------------------------------------------- | :------------------------------------------------ | :---------: | :---------: | :--------: |
+| Kubernetes networking unsuccessful| The application wouldn't be able to deploy      | understand how k8s works                                                           | kubernetes enables the app to run                         | 60%   | High     | 70%         |
+| Exceeding the budget    | the resources used cost money to run    | use cost effective resources for deployment                               | keep the cost of deployment low                  | 30% | High        | 35%       |
+| Exceeding the time limit  | If we go over the time limit then the project will not pass   |Use the scrum feature of sprints to complete tasks                  | Split work up into intervals            | 10%     | High      | 10%    |
+| Exposed keys     | if keys are exposed , unauthorised access could occur   | maintain that best practises are used for version control    | maintain that best practises are used   | 40%| High        | 50%        |
+| Branch conflicts       | too many merge conflicts and deployment will be halted    | push working versions of code on to the master                  | make use of the branch feature in github correctly                 | 20%      | High     | 25%          |
+| Jenkins password exposed | if jenkins is exposed the app would be vunerable     | use best practices to keep passwords secure                              | ensure password is not exposed          | 10%    | High      | 10%          |
+| AWS sever exposed     | if exposed there is a risk that the app could be deleted     | make sure users with access are authorised                                        | Make IAM Users for team members only   | 50%     | High       | 60%          |
+|  Docker images not updating  | if it happens the rolling update isnt working   | make sure that docker images are updated  | app works correctly with data          | 70%      | High        | 80%         |
+| Jenkins pipeline   | if this occurs the app wont run correctly     | add a github webhook | Have a webhook that works   | 50%    | High     | 60%         |
+| Subnet cidr id taken  | if this occurs the app wont work    | use a distinctive cidr id                    | make sure the eks cluster is able to communicate   | 30%   | High        | 40%         |
+| 
+
+**Final Interval 08/07/20 ~ 10/07/20**
+
+| Risk              | Risk Statment | Response Stratergy                                                                 | Objective                                         | likelihood   | Impact      | Risk Level |
+| :---------------- | :------------ | :---------------------------------------------------------------------------------- | :------------------------------------------------ | :---------: | :---------: | :--------: |
+| Kubernetes networking unsuccessful| The application wouldn't be able to deploy      | understand how k8s works                                                           | kubernetes enables the app to run                         | 10%   | High     | 10%         |
+| Exceeding the budget    | the resources used cost money to run    | use cost effective resources for deployment                               | keep the cost of deployment low                  |20% | High        | 40%       |
+| Exceeding the time limit  | If we go over the time limit then the project will not pass   |Use the scrum feature of sprints to complete tasks                  | Split work up into intervals            | 10%     | High      | 10%    |
+| Exposed keys     | if keys are exposed , unauthorised access could occur   | maintain that best practises are used for version control    | maintain that best practises are used   | 20%| High        | 30%        |
+| Branch conflicts       | too many merge conflicts and deployment will be halted    | push working versions of code on to the master                  | make use of the branch feature in github correctly                 | 10%      | High     | 10%          |
+| Jenkins password exposed | if jenkins is exposed the app would be vunerable     | use best practices to keep passwords secure                              | ensure password is not exposed          | 10%    | High      | 10%          |
+| AWS sever exposed     | if exposed there is a risk that the app could be deleted     | make sure users with access are authorised                                        | Make IAM Users for team members only   | 10%     | High       | 10%          |
+|  Docker images not updating  | if it happens the rolling update isnt working   | make sure that docker images are updated  | app works correctly with data          | 30%      | High        | 40%         |
+| Jenkins pipeline   | if this occurs the app wont run correctly     | add a github webhook | Have a webhook that works   | 10%    | High     | 10%         |
+| Subnet cidr id taken  | if this occurs the app wont work    | use a distinctive cidr id                    | make sure the eks cluster is able to communicate   | 10%   | High        | 10%         |
+| 
+
+This risk assessment displays the different possible risks that could occur during the development of our project the assessment is to be updated at different  time  intervals whilst developing our solution to be able to give an insight of how each risk progressed we have added a risk level which essentially is a sum of (**likelihood**) the possibility of the risk happening and (**impact**) the damage level the risk would have on the project if it did occur.
+
+we also ensured that we revisited the risk assessment and addressed any clear issues in the development one instance of this is when we revisited the cidr block risk and came up with a solution for it in the 3rd interval of the project which saw the liklihood fall dramatically.
 
 ---
 ## Architecture
 
+### architecture design 
+**initial architecture design**
+
+![iad](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/intial%20architecture%20design%20.png)
+
+**final architecture design**
+
+![ad](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/architecture%20design.png)
+
+we had to change our initial design to make sure that the database was able to be displayed correctly through the front end of the app to do this we employed a new solution for the app. this included utilising a gcp mysql instance to hold the database.
+
+We needed to utilise the gcp sql rather than using the amazon rds system as we encountered persistent issues with connections between front and back ends whilst attempting to use the amazon rds system.
+
+### CI Pipeline 
+
+![ci](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/CiPipline.png)
 
 ### Technology comparisons
 
@@ -152,6 +244,8 @@ An multi provider approach was considered due to the competitiveness of todays c
 ---
 ## Testing
 ![](Documents/testoutput.PNG)
+
+Testing for the backend was built into the jenkins pipeline. We run a mvn test which is then displayed in jenkins and can be checked for any errors.
 
 ---
 ## Conclusion
