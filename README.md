@@ -177,9 +177,9 @@ we also ensured that we revisited the risk assessment and addressed any clear is
 
 ![final](https://user-images.githubusercontent.com/64256460/87092099-c192d400-c232-11ea-8711-cbe65c704053.png)
 
-we had to change our initial design to make sure that the database was able to be displayed correctly through the front end of the app to do this we employed a new solution for the app. this included utilising a gcp mysql instance to hold the database.
+we had to change our initial design to make sure that the database was able to be displayed correctly through the front end of the app to do this we employed a new solution for the app. Due to the competitiveness of today's cloud marketplace. so we incuded a gcp database instaed of a a aws rds. we thought having a multi provider approach using both AWS and GCP resources would showcase flexibility of the business opportunities group 3 can provide. along with this the intial design was to have a bastian host. 
 
-We needed to utilise the gcp sql rather than using the amazon rds system as we encountered persistent issues with connections between front and back ends whilst attempting to use the amazon rds system.
+In the final design we got rid of the bastian host and made the worker node also the jenkins machine due the time constraints and having increase the computing power of the ec2 machine.
 
 
 ### Technology comparisons
@@ -399,7 +399,7 @@ Fix
 9.	Still in the folder, run the command terraform apply. The ec2 created will take a little wile to configure as Jenkins/Kubernetes is being installed. 
 10.	SSH into the new EC2 created by following the instruction on the aws console. “take note you’ll need the secret key you created in step 4.
 11.	Git clone down the repository again as this machine is also the master node.
-12.	run the command “sudo su Jenkins” then vim ~/.bashrc. finally copy then configure the following into file then save. 
+12.	run the command “sudo su jenkins” then vim ~/.bashrc. finally copy then configure the following into file then save. 
 *	export url=jdbc:mysql://<databse ip>:3306/petclinic?useUnicode=true
 * export host="database ip"
 *	export password= "chose password"
