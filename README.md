@@ -324,7 +324,7 @@ EC2 configuration – using an T2 micro and ubuntu 16 image. The ram of the mach
 
 Fix 
 
-We increased the size of the machine to a t2 medium with 2CPU. Along with this we used an ubuntu 20 Ami image. This resulted in not only being able to build/run the application but install the software faster. The major benefit was the group was able to use this EC2 as the Jenkins machine and also the manager node in the eks cluster.
+We increased the size of the machine to a t2 medium with 2CPU. Along with this we used an ubuntu 18 Ami image. This resulted in not only being able to build/run the application but install the software faster. The major benefit was the group was able to use this EC2 as the Jenkins machine and also the manager node in the eks cluster.
 
 **Issue 2.**
 
