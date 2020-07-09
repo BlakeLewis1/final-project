@@ -221,6 +221,7 @@ Eks. The Eks Cluster has three separate Deployments, frontend application, backe
 
 An multi provider approach was considered due to the competitiveness of todays cloud marketplace. This was completed by utilising an GCP Mysql database and Aws resources applied by terraform. This skillset showcases flexibility of the business opportunities group3 can provide.
 
+![](Documents/ProcessChainDiagram.png)
 
 ---
 ## Testing
