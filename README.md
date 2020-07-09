@@ -170,11 +170,12 @@ we also ensured that we revisited the risk assessment and addressed any clear is
 ### architecture design 
 **initial architecture design**
 
-![iad](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/intial%20architecture%20design%20.png)
+![intial](https://user-images.githubusercontent.com/64256460/87092069-b17af480-c232-11ea-9316-5bb664d8342b.png)
+
 
 **final architecture design**
 
-![ad](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/architecture%20design.png)
+![final](https://user-images.githubusercontent.com/64256460/87092099-c192d400-c232-11ea-8711-cbe65c704053.png)
 
 we had to change our initial design to make sure that the database was able to be displayed correctly through the front end of the app to do this we employed a new solution for the app. this included utilising a gcp mysql instance to hold the database.
 
