@@ -402,9 +402,9 @@ Fix
 11.	Git clone down the repository again as this machine is also the master node.
 12.	run the command “sudo su Jenkins” then vim ~/.bashrc. finally copy then configure the following into file then save. 
 *	export url=jdbc:mysql://<databse ip>:3306/petclinic?useUnicode=true
-* export host=<database ip>
-*	export password= <chose password>
-*	export username=<chose username>
+* export host="database ip"
+*	export password= "chose password"
+*	export username= "chose username"
 *	export driver_class_name=com.mysql.jdbc.Driver
 13.	In the aws console get the ip of the ec2 and paste it into the url like so http://<EC2 Ip Address:8080/
 14.	cat initial password out of your ec2 terminal then enter on the Jenkins welcome page
