@@ -241,7 +241,9 @@ An multi provider approach was considered due to the competitiveness of todays c
 ## Testing
 ![](Documents/testoutput.PNG)
 
-Testing for the backend was built into the jenkins pipeline. We run a mvn test which is then displayed in jenkins and can be checked for any errors.
+Testing for the backend was built into the Jenkins pipeline. We run a mvn test which is then displayed in Jenkins logs where it can be checked for any errors.
+Due to time constraints and concern for wasting machine resources the built-in testing for the frontend was not implemented into Jenkins.  
+
 
 ---
 ## Conclusion
