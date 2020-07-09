@@ -6,7 +6,7 @@ pipeline{
                sh 'chmod 775 ./script/*'
             }
         }
-        stage(' Prepair enviornment') {
+        stage(' Prepare environment') {
             steps{
                 sh 'echo "installing docker locally"'
                 sh './script/docker.sh'

@@ -66,6 +66,16 @@ The External applications work in a way that the frontend will communicate with 
 ## Project Tracking
 
 
+    * Initial Trello Board 
+![image1](https://user-images.githubusercontent.com/64256460/86902655-2ac8f900-c106-11ea-8c4b-cba5f5c0c260.png)
+    * Trello board after 2nd interval:
+![image2](https://user-images.githubusercontent.com/64256460/86902290-ab3b2a00-c105-11ea-824c-98c8e7c61ffd.png)
+    * Trello board after 3rd interval:
+![image3](https://user-images.githubusercontent.com/64256460/86905837-901ee900-c10a-11ea-8f32-0f9da5630e7c.png)
+      we included a new column for issues with the project so that these could be seen by the group and therefore be able tackle more specific issues with development 
+    * Final Trello Board
+
+
 **Intial trello board :**
 
 ![image1](https://user-images.githubusercontent.com/64256460/86902655-2ac8f900-c106-11ea-8c4b-cba5f5c0c260.png)
@@ -85,8 +95,15 @@ we included a new column for issues with the project so that these could be seen
 
 ![image4](https://user-images.githubusercontent.com/64256460/86958257-c6348b00-c153-11ea-9c58-944453333d96.png)
 
+
 ---
 ## Risk Assessment
+[RA](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/Project%20RA%20-%20Sheet1.pdf)
+
+linked above is the risk assessment for the project for ease of viewing it is reccomended that you download the file.
+
+This risk assessment displays the different possible risks that could occur during the development of our project the assessment is to be updated at different  time  intervals whilst developing our solution to be able to give an insight of how each risk progressed we have added a risk level which essentially is a sum of (**liklihood**) the possibility of the risk happening and (**impact**) the damage level the risk would have on the project if it did occur.
+
 
 
 **initial interval 02/07/20 ~ 04/07/20**
@@ -162,6 +179,7 @@ we also ensured that we revisited the risk assessment and addressed any clear is
 ---
 ## Architecture
 
+
 ### architecture design 
 **initial architecture design**
 
@@ -175,30 +193,31 @@ we had to change our initial design to make sure that the database was able to b
 
 We needed to utilise the gcp sql rather than using the amazon rds system as we encountered persistent issues with connections between front and back ends whilst attempting to use the amazon rds system.
 
+
 ### Technology comparisons
 
 ![image](https://user-images.githubusercontent.com/64256460/86617129-b7f93a00-bfae-11ea-90b5-4f84591bc2a9.png)
 
 The decision for containerisation orchestration was to choose between Docker Swarm and Kubernetes. 
 
-Kubernetes, otherwise known as k8s, is an open-source solution for automating deployments of containerized applications which is made by Google. Kubernetes has many solutions for managing and scaling very large quantities of containers by grouping them into manageable units. Because Kubernetes is open-source, it can be deployed as an on-premises, hybrid or public cloud solution.  
+Kubernetes, otherwise known as k8s, is an open-source solution for automating deployments of containerized applications which is made by Google. Kubernetes has many solutions for managing and scaling very large quantities of containers by grouping them into manageable units. Because Kubernetes is open-source, it can be deployed as an on-premise, hybrid or public cloud solution.  
 
 
-Docker swarm is docker's containerisation orchestration tool. Like kubernetes, is open source swarm is designed around four core principles. 
+Docker swarm is docker's containerisation orchestration tool. Like kubernetes, Docker Swarm is open source and is designed around four core principles:
 
-Less cluttered/heavy and with just working methodology 
+* Less cluttered/heavy and with just working methodology 
 
-No Single Point of Failure option for Docker Swarm 
+* No Single Point of Failure option for Docker Swarm 
 
-Secure due to auto-generation of security certificates. 
+* Secure due to auto-generation of security certificates. 
 
-Compatibility with Backward versions easily. 
+* Compatibility with Backward versions easily. 
 
- The comparison 
+The comparison 
 
-There are fundamental differences even though both are containerisation orchestration tools.  
+There are fundamental differences, even though both are container orchestration tools.  
 
-Swarm focuses on ease of use with integration with Docker core components and also has an easier installation process while Kubernetes has a more manual installation process and remains open and modular. Kubernetes is also older than docker and therefore there are years of expert experience at hand to help.  
+Swarm focuses on ease of use with integration with Docker core components and also has an easier installation process, while Kubernetes has a more manual installation process and remains open and modular. Kubernetes is also older than docker and therefore there are years of expert experience at hand to help.  
 
 One of the main reasons why we decided to use kubernetes over docker swarm was that it was easier to update images by using kubectl apply to make updates to the image whilst with docker you would be required to build the image using docker image build  which would take up time rebuilding the image.  
 
@@ -221,6 +240,8 @@ In Terraform, you can run a ‘plan’ step before applying any changes. This st
 CloudFormation is a tool from AWS that allows you to spin up resources effortlessly. You define all the resources you want AWS to spin up in a blueprint document made in either JSON or YAML. With CloudFormation you are able to see and design your infrastructure with the designer. 
 
 When deciding which tool to use , terraform or cloud formation we focused on personal preference in the group and went with what the majority of the group felt comfortable with and with that in mind the group decided that terraform was the best tool to use for setting up the infrastructure of the deployment for the app on of the main reasons we decided to use terraform was that it was easier to use .ts files rather than using cloudformation and  .yml files because yaml files are prone to failing when there are indentation errors in the code. Terraform also validates the config file before running it. 
+
+![](Documents/CiPipline.png)
 
 ---
 ## Deployment
