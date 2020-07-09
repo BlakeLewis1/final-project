@@ -16,7 +16,13 @@ pipeline{
                 sh './script/robust.sh'
             }
         }    
-        stage('deploy application through kubernetes') {
+        stage(' Testing Enviornment') {
+            steps{
+                sh 'echo "testing back end"'
+                sh './script/backtest.sh'
+            }
+        }
+        stage('depoly application through kubernetes') {
             steps{
                 sh 'echo "deploying application"'
                 sh './script/deploy.sh'   

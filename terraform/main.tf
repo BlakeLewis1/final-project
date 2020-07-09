@@ -4,6 +4,13 @@ provider "aws" {
   version = "~> 2.0"
 }
 
+provider "google" {
+  credentials = file("~/.google.json")
+  project     = "group-project"
+  alias = "googledb"
+  region      = "eu-west2"
+}
+
 module "vpc" {
   source = "./VPC"
 }
@@ -16,7 +23,7 @@ module "sg" {
 module "ec2" {
   source = "./EC2"
   public_subnet_id       = module.vpc.subnet_A_id
-  jenkins_subnet_id       = module.vpc.jenkins_id
+  #jenkins_subnet_id       = module.vpc.jenkins_id
   vpc_security_group_ids = module.sg.aws_sg_id
   jenkins_security_group_ids = module.sg.jenkins_security_group_ids
 }
@@ -26,13 +33,4 @@ module "eks" {
   region = var.region
   subnets = ["${module.vpc.subnet_A_id}", "${module.vpc.subnet_B_id}"]
   sg = ["${module.sg.aws_sg_id}"]
-}
-
-module "rds" {
-  source = "./RDS"
-  subnet_A  = module.vpc.subnet_A_id
-  subnet_B  = module.vpc.subnet_B_id
-  username = var.username
-  password = var.password
-  region   = var.region
 }

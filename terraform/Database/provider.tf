@@ -1,3 +1,5 @@
-provider "aws" {
+provider "google" {
     region = var.region
 }
+
+

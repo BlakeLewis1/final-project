@@ -65,11 +65,27 @@ The External applications work in a way that the frontend will communicate with 
 ---
 ## Project Tracking
 
+    * Initial Trello Board 
+![image1](https://user-images.githubusercontent.com/64256460/86902655-2ac8f900-c106-11ea-8c4b-cba5f5c0c260.png)
+    * Trello board after 2nd interval:
+![image2](https://user-images.githubusercontent.com/64256460/86902290-ab3b2a00-c105-11ea-824c-98c8e7c61ffd.png)
+    * Trello board after 3rd interval:
+![image3](https://user-images.githubusercontent.com/64256460/86905837-901ee900-c10a-11ea-8f32-0f9da5630e7c.png)
+      we included a new column for issues with the project so that these could be seen by the group and therefore be able tackle more specific issues with development 
+    * Final Trello Board
+
 ---
 ## Risk Assessment
+[RA](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/Project%20RA%20-%20Sheet1.pdf)
+
+linked above is the risk assessment for the project for ease of viewing it is reccomended that you download the file.
+
+This risk assessment displays the different possible risks that could occur during the development of our project the assessment is to be updated at different  time  intervals whilst developing our solution to be able to give an insight of how each risk progressed we have added a risk level which essentially is a sum of (**liklihood**) the possibility of the risk happening and (**impact**) the damage level the risk would have on the project if it did occur.
+
 
 ---
 ## Architecture
+
 
 ### Technology comparisons
 
@@ -117,6 +133,8 @@ In Terraform, you can run a ‘plan’ step before applying any changes. This st
 CloudFormation is a tool from AWS that allows you to spin up resources effortlessly. You define all the resources you want AWS to spin up in a blueprint document made in either JSON or YAML. With CloudFormation you are able to see and design your infrastructure with the designer. 
 
 When deciding which tool to use , terraform or cloud formation we focused on personal preference in the group and went with what the majority of the group felt comfortable with and with that in mind the group decided that terraform was the best tool to use for setting up the infrastructure of the deployment for the app on of the main reasons we decided to use terraform was that it was easier to use .ts files rather than using cloudformation and  .yml files because yaml files are prone to failing when there are indentation errors in the code. Terraform also validates the config file before running it. 
+
+![](Documents/CiPipline.png)
 
 ---
 ## Deployment
