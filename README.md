@@ -254,6 +254,28 @@ This alarm would trigger if cpu utilization of the machine exceeds 75% which sho
 This alarm was created to warn everyone if the machine powers off for longer than 1 minute unexpectedly.
 
 ---
+
+## Cost analysis
+#### Total Costs
+![](Documents/currentbilling.PNG)
+![](Documents/billingcircle.PNG)
+we started off with deciding which resources were going to be required for the project and also took into consideration the cost  of each resource consequently we had to research different methods to complete things and we analysed using this research what was going to be the most cost effective method and the forecasted costs chart shows that our deployment method will be under the £20 budget that QA had setup for us in the beginning of the project 
+
+The eks was one of the biggest costs for the project at the time of writing the EKS cluster has been running for 22 hours and was 34.2% of our total expense. If the website was receiving more requests it would definitely become the most expensive service used in the application.
+
+Due to the application utilising the EKS service the free tier t2.micro cpu was not suitable. Therefore the EC2 instances ended up being our largest expense at 48.7% of total cost.
+Total cost for EC2:
+![](Documents/costtable.PNG)
+As you can see above the EKS creates 2 t3 medium instances and 1 t2 medium instance. The t3 medium was the most expensive resource as of writing.
+
+In conclusion after analysing the costs it's clear that the cost of this project could have been reduced if we used the ingress method, however we had already experimented with this and attempted at the start to implement this method but it became too complex and could have led to the project not being completed within time.
+
+
+#### Expected Cost
+![](Documents/barchart.PNG)
+As you can see above the expected cost for the rest of the month at the time of writing (July 09) is $13.81. However we believe this prediction is inaccurate as during development the machines have been turned off over night and the project was started a few days into the month making the overall estimate inaccurate.
+
+---
 ## Conclusion
 
 ---
