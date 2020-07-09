@@ -1,4 +1,4 @@
-# final-project-team3
+# Final-Project-Team3
 
 ## Pet-Clinic Web Application
 ### Contents
@@ -315,6 +315,74 @@ starting every day with a daily scrum meeting and used sprint retrospectives at 
 whilst completing the project their were issues that we came across these were therefore added to the trello board in the form of issues however these were effectively our product backlog artifact, consequently this was to ensure that the team were aware of them and therefore were able to tackle these specific issues this helped the team to work more effectively 
 
 What we would do better in the future I would have liked to have the backlog properly documented in the README.md and be able to work
+
+---
+## ISSUES 
+
+**Issue1**
+
+EC2 configuration – using an T2 micro and ubuntu 16 image. The ram of the machine used was to small and the version of the ubuntu was out dated to install the correct software to run/build the docker images for both the back end and front application.
+
+Fix 
+
+We increased the size of the machine to a t2 medium with 2CPU. Along with this we used an ubuntu 20 Ami image. This resulted in not only being able to build/run the application but install the software faster. The major benefit was the group was able to use this EC2 as the Jenkins machine and also the manager node in the eks cluster.
+
+**Issue 2.**
+
+EKS not working. Some of the reasons for this was as following:
+
+The nginx service which was deployed by the cluster. This service works as a load balancer and the load balancer it self could not find the worker nodes in the cluster in the specified availability zones. The incorrect images was being pulled down by git hub.
+
+Fix .
+
+The terraform subnets had to use a different cidr block as the current cidrs was taken. It was changed from 10.0… to 10.50. after this the load balancer could find the worker nodes that had been deployed. Docker images had to be re built and pushed to the docker repository. Along with this the image had to have been built with the correct environment variable exported.
+
+**Issue 3.**
+
+Jenkins pipeline build – the build would not allow the EKS to deploy the Kubernetes yamls into the cluster.
+
+Fix – we had to run the command aws configure inside Jenkins so thath jenkis had access to the AWS consol. A separate Jenkins user was created.
+
+**Issue 4.**
+
+Terraform not being able to destroy AWS resources. 
+
+Without having te correct permission some resources could not be deleted unless the action was done by the root user. The main reason was because some resources depend on others for example the RDS database utilises a network which was connect to the rest of the architecture.
+
+Fix delete the RDS instance manually then run terraform destroy again.
+
+**Issue 5.**
+
+Communication between containers. The front end back end application was not able to communicate through containerisation.
+
+Fix 
+
+create a nginx container and reverse proxy so that the container listen on port 80 for both the front end and backend application. After which the frontend application had to be configure so that it had the correct back end point location.
+
+**Issue 6.**
+
+login into docker hub via the terminal. 
+
+Fix
+
+Having a robust deployment means that images has to built , and push to docker hub through automation. An unrecognized problem occur which resulted in the team having to install another dependency “sudo apt install gnupg2 pass”.
+
+
+---
+## Future Improvements
+
+* Soley use the aws ec2 user data to create the enviroment similar to ansible rather than using a build from jenkins 
+  by doing this we are making the source code more efficient. 
+
+*  Look into using Fargate for deploying kubernetes as a serverless architecture would better suit our app. 
+
+*  Implement a lambda function that could take snapshots of the AMI for disaster recovery.
+
+*  Implement x-ray to optimize request flows.  
+
+*  Run stress testing.
+
+*  Use codepipeline removing the need for a jenkins server.
 
 ---
 ## Set up guide
