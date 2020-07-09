@@ -155,7 +155,7 @@ we included a new column for issues with the project so that these could be seen
 | Subnet cidr id taken  | if this occurs the app wont work    | use a distinctive cidr id                    | make sure the eks cluster is able to communicate   | 10%   | High        | 10%         |
 | 
 
-This risk assessment displays the different possible risks that could occur during the development of our project the assessment is to be updated at different  time  intervals whilst developing our solution to be able to give an insight of how each risk progressed we have added a risk level which essentially is a sum of (**liklihood**) the possibility of the risk happening and (**impact**) the damage level the risk would have on the project if it did occur.
+This risk assessment displays the different possible risks that could occur during the development of our project the assessment is to be updated at different  time  intervals whilst developing our solution to be able to give an insight of how each risk progressed we have added a risk level which essentially is a sum of (**likelihood**) the possibility of the risk happening and (**impact**) the damage level the risk would have on the project if it did occur.
 
 we also ensured that we revisited the risk assessment and addressed any clear issues in the development one instance of this is when we revisited the cidr block risk and came up with a solution for it in the 3rd interval of the project which saw the liklihood fall dramatically.
 
