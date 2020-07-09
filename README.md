@@ -177,7 +177,7 @@ We needed to utilise the gcp sql rather than using the amazon rds system as we e
 
 ### CI Pipeline 
 
-![ci](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/CI%20Pipline.png)
+![ci](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/CiPipline.png)
 
 ### Technology comparisons
 
