@@ -242,8 +242,17 @@ An multi provider approach was considered due to the competitiveness of todays c
 ![](Documents/testoutput.PNG)
 
 Testing for the backend was built into the Jenkins pipeline. We run a mvn test which is then displayed in Jenkins logs where it can be checked for any errors.
-Due to time constraints and concern for wasting machine resources the built-in testing for the frontend was not implemented into Jenkins.  
+Due to time constraints and concern for wasting machine resources the built-in testing for the frontend was not implemented into Jenkins.
+We encountered an issue when it came to implementing automated testing with the front-end application
 
+---
+## Monitoring
+For the project we looked at our budget and decided it would be beneficial to enable advanced monitoring in AWS cloud watch for our EC2. This enabled us to setup alerts that would constantly monitor the machine. Whenever an alarm is triggered an email is sent too everybody in the group lowering the risk of the alarm being missed.
+We setup 2 alarms for our EC2 instance
+![](Documents/highcpualarm.PNG)
+This alarm would trigger if cpu utilization of the machine exceeds 75% which should be very unlikely due to the workload being balanced between multiple machines
+![](Documents/machinefailalarm.PNG)
+This alarm was created to warn everyone if the machine powers off for longer than 1 minute unexpectedly.
 
 ---
 ## Conclusion
@@ -262,7 +271,7 @@ The QA Consultants for helping with our Development and teaching the required sk
 Jason sinclair, Misbah Mehmood, Jonathan Vaughan, Blake Lewis, Tom Petty
 
 ## MIT License
-gdsef
+
 Copyright (c) 2020 Group 3
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
