@@ -83,6 +83,7 @@ we included a new column for issues with the project so that these could be seen
 ![image4](https://user-images.githubusercontent.com/64256460/86958257-c6348b00-c153-11ea-9c58-944453333d96.png)
 
 [Sprint-Log](https://docs.google.com/document/d/1Uw2YPxtioq02BT7eTdzH7P2uTiU7O439x90h3ULEJp8/edit?usp=sharing)
+Above is a link to our sprint backlog which has a rough example of what our sprints looked like and the time designated for the sprints are also available in this document.
 
 
 ---
