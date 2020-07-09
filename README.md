@@ -175,10 +175,6 @@ we had to change our initial design to make sure that the database was able to b
 
 We needed to utilise the gcp sql rather than using the amazon rds system as we encountered persistent issues with connections between front and back ends whilst attempting to use the amazon rds system.
 
-### CI Pipeline 
-
-![ci](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/CiPipline.png)
-
 ### Technology comparisons
 
 ![image](https://user-images.githubusercontent.com/64256460/86617129-b7f93a00-bfae-11ea-90b5-4f84591bc2a9.png)
