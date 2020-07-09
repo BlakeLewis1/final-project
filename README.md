@@ -241,8 +241,10 @@ To elaborate on some of the technologies used in the CI pipeline is as follows:
 ![](Documents/testoutput.PNG)
 
 Testing for the backend was built into the Jenkins pipeline. We run a mvn test which is then displayed in Jenkins logs where it can be checked for any errors.
+
 Due to time constraints and concern for wasting machine resources the built-in testing for the frontend was not implemented into Jenkins.
-We encountered an issue when it came to implementing automated testing with the front-end application
+
+We encountered an issue when it came to implementing automated testing with the front-end application as it required human interaction to run the debugger. Therefor running the ng test command seems like a waste of resources as automation is the goal of the project. 
 
 ---
 ## Monitoring
@@ -272,7 +274,7 @@ In conclusion after analysing the costs it's clear that the cost of this project
 
 
 #### Expected Cost
-![](Documents/barchart.PNG)
+![](Documents/barchart.png)
 As you can see above the expected cost for the rest of the month at the time of writing (July 09) is $13.81. However we believe this prediction is inaccurate as during development the machines have been turned off over night and the project was started a few days into the month making the overall estimate inaccurate.
 
 ---
@@ -280,6 +282,35 @@ As you can see above the expected cost for the rest of the month at the time of 
 
 ---
 ## Set up guide
+1.  Create or login to your AWS account.
+2.	In the console change the region to the desired region which would like all your resources to be in.
+3.	Create an IAM user and attach the Administrator Access and save the credentials for later use.
+4.	Generate an AWS .pem key and save the key in a secure location on your machine.
+5.	Clone down the repository … and cd into the Terraform file.
+6.	Install the aws-cli then execute the command “aws configure” in your terminal. This will prompt you to enter the access key and secret key of the user your created which can be found in the file you saved in step 3.
+7.	Install terraform following this guide.
+8.	Still in the Terraform file, run the command terraform in it followed by terraform plan. Here you can see all of the resources which will be created in your aws consol. 
+9.	Still in the folder, run the command terraform apply. The ec2 created will take a little wile to configure as Jenkins/Kubernetes is being installed. 
+10.	SSH into the new EC2 created by following the instruction on the aw console. “take note you’ll need the secret key you created in step 4.
+11.	Git clone down the repository again as this machine is also the master node.
+12.	run the command “sudo su Jenkins” then vim ~/.bashrc. finally copy then configure the following into file then save. 
+*	export url=jdbc:mysql://<databse ip>:3306/petclinic?useUnicode=true
+* export host=<database ip>
+*	export password= <chose password>
+*	export username=<chose username>
+*	export driver_class_name=com.mysql.jdbc.Driver
+13.	In the aws console get the ip of the ec2 and paste it into the url like so http://<EC2 Ip Address:8080/
+14.	cat initial password out of your ec2 terminal then enter on the Jenkins welcome page
+15.	Following the commands prompted by Jenkins - install all plugins and create an Jenkins account. 
+16.	Once Jenkins is initiated create a new item and follow the steps.
+
+*	pipeline build 
+*	git project checked – paste in the url of the repository you cloned  
+*	git webhooks checked – paste in the url again 
+*	select the dev branch and apply.
+17.	Using the guide found here configure your copy of the repository to allow webhooks.
+18.	Run the Jenkins pipeline by clicking build. The system is set to work in robust way as seen in the robust script of the Jenkins file. so you may need to log into your docker account before running the pipeline.
+
 
 ---
 
