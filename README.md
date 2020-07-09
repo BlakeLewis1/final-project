@@ -136,6 +136,18 @@ When deciding which tool to use , terraform or cloud formation we focused on per
 
 ![](Documents/CiPipline.png)
 
+The diagram above,
+
+
+
+As demonstrated in the diagram, the inclusion of a non-local database is optional, and would be created in an AWS RDS instance. This requires reworking of the backend container.
+
+A multi-provider approach was considered, with use of a GCP SQL instance, however time constraints on the project did not allow this. It would have required the inclusion of customer and vpn gateways, and the networking of a tunnel between the two providers. A multi-provider solution would be a meaningful extension to the project, showcasing the flexibile business opportunities available in a competitive cloud market.
+
+NGINX, listed as the tool used for 'live' production, is also a container, running as the load balancing service for the EKS cluster. It also serves as part of the https authentication system by way of traffic redirect.
+
+The process flow chosen in this project mirrors closely that used by DevOps engineers in genuine enterprise environments, and to detail this, a full DevOps toolchain analysis is included below.
+
 ---
 ## Deployment
 
