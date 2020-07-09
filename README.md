@@ -292,15 +292,15 @@ What we would do better in the future I would have liked to have the backlog pro
 ---
 ## Set up guide
 1.  Create or login to your AWS account.
-2.	In the console change the region to the desired region which would like all your resources to be in.
+2.	In the console change the region to eu-west-1.
 3.	Create an IAM user and attach the Administrator Access and save the credentials for later use.
-4.	Generate an AWS .pem key and save the key in a secure location on your machine.
+4.	Generate an pem key and name it AWSKey.pem and save the key in a secure location on your machine.
 5.	Clone down the repository … and cd into the Terraform file.
 6.	Install the aws-cli then execute the command “aws configure” in your terminal. This will prompt you to enter the access key and secret key of the user your created which can be found in the file you saved in step 3.
 7.	Install terraform following this guide.
-8.	Still in the Terraform file, run the command terraform in it followed by terraform plan. Here you can see all of the resources which will be created in your aws consol. 
+8.	Still in the Terraform file, run the command terraform init followed by terraform plan. Here you can see all of the resources which will be created in your aws consol. 
 9.	Still in the folder, run the command terraform apply. The ec2 created will take a little wile to configure as Jenkins/Kubernetes is being installed. 
-10.	SSH into the new EC2 created by following the instruction on the aw console. “take note you’ll need the secret key you created in step 4.
+10.	SSH into the new EC2 created by following the instruction on the aws console. “take note you’ll need the secret key you created in step 4.
 11.	Git clone down the repository again as this machine is also the master node.
 12.	run the command “sudo su Jenkins” then vim ~/.bashrc. finally copy then configure the following into file then save. 
 *	export url=jdbc:mysql://<databse ip>:3306/petclinic?useUnicode=true
