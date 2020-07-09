@@ -60,8 +60,6 @@ The External applications work in a way that the frontend will communicate with 
 * EKS to orchestrate the containers which will run the applications.
 * CI Server - Jenkins functioning as pipeline with Webhooks from the version control GIt Hub, to trigger builds.
 
-### Summary 
-
 ---
 ## Project Tracking
 
