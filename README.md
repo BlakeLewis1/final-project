@@ -234,6 +234,8 @@ When deciding which tool to use , terraform or cloud formation we focused on per
 ---
 ## Testing
 
+Testing for the backend was built into the jenkins pipeline. We run a mvn test which is then displayed in jenkins and can be checked for any errors.
+
 ---
 ## Conclusion
 
