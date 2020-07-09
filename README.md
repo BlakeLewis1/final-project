@@ -194,7 +194,7 @@ When deciding which tool to use to form our architecture, we had to choose terra
 The reason we chose to use kubernetes is due to its advanced monitoring and ability to manage and scale up large clusters of pods. Kubernetes manages nodes and performs constant health checks and reboot of failing pods. EKS can easily perform rolling updates with no downtime.  Due to the benefits large organisations all use it over docker swarm. Downside we had very little experience and understanding of pod communication and service types. 
 In addition to this another reason why we decided to use kubernetes over docker swarm was that it was easier to update images by using kubectl apply to make updates to the image whilst with docker you would be required to build the image using docker image build  which would take up time rebuilding the image.
 
-**jenkins_pipeline**
+**Jenkins_Pipeline**
 
 Jenkins pipeline
 
