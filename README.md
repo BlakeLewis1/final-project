@@ -370,6 +370,7 @@ Having a robust deployment means that images has to built , and push to docker h
 **Issue 7.**
 
 Fix
+
 ---
 ## Future Improvements
 
