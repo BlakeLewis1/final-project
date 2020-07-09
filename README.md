@@ -134,25 +134,24 @@ CloudFormation is a tool from AWS that allows you to spin up resources effortles
 
 When deciding which tool to use , terraform or cloud formation we focused on personal preference in the group and went with what the majority of the group felt comfortable with and with that in mind the group decided that terraform was the best tool to use for setting up the infrastructure of the deployment for the app on of the main reasons we decided to use terraform was that it was easier to use .ts files rather than using cloudformation and  .yml files because yaml files are prone to failing when there are indentation errors in the code. Terraform also validates the config file before running it. 
 
-![](Documents/CiPipline.png)
-
-The diagram above,
-
-
-
-As demonstrated in the diagram, the inclusion of a non-local database is optional, and would be created in an AWS RDS instance. This requires reworking of the backend container.
-
-A multi-provider approach was considered, with use of a GCP SQL instance, however time constraints on the project did not allow this. It would have required the inclusion of customer and vpn gateways, and the networking of a tunnel between the two providers. A multi-provider solution would be a meaningful extension to the project, showcasing the flexibile business opportunities available in a competitive cloud market.
-
-NGINX, listed as the tool used for 'live' production, is also a container, running as the load balancing service for the EKS cluster. It also serves as part of the https authentication system by way of traffic redirect.
-
-The process flow chosen in this project mirrors closely that used by DevOps engineers in genuine enterprise environments, and to detail this, a full DevOps toolchain analysis is included below.
-
 ---
 ## Deployment
+The Ci Pipeline and Process chain diagram showcased below represent a deployment strategy after the application has already be developed and handed over to the DevOps Engineers.
+
+![](Documents/CiPipline.png)
+
+The diagram above, displays the deployment of our project. 
+
+Jenkins. A Pipeline build triggered by the version control system Github, initiates the process of which the final stage of the build will deploy the applications using Amazons elastic Kubernetes services. 
+
+Eks. The Eks Cluster has three separate Deployments, frontend application, backend application, and NGINX. The NGINX will work as a Load balancer within the EKS cluster, directing all traffic to the front end of the application.
+
+An multi provider approach was considered due to the competitiveness of todays cloud marketplace. This was completed by utilising an GCP Mysql database and Aws resources applied by terraform. This skillset showcases flexibility of the business opportunities group3 can provide.
+
 
 ---
 ## Testing
+![](Documents/testoutput.PNG)
 
 ---
 ## Conclusion
