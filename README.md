@@ -367,7 +367,9 @@ Fix
 
 Having a robust deployment means that images has to built , and push to docker hub through automation. An unrecognized problem occur which resulted in the team having to install another dependency “sudo apt install gnupg2 pass”.
 
+**Issue 7.**
 
+Fix
 ---
 ## Future Improvements
 
