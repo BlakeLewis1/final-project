@@ -187,7 +187,7 @@ We needed to utilise the gcp sql rather than using the amazon rds system as we e
 
 **terraform**
 
-For provisioning architecture we used terraform as its Open source and works across 100s of providers and has great documentation. Terraform plan was used to identify syntax errors and display a detailed plan of the resources to be created. We used modules to avoid duplication of code. We also used terraform to configure both aws resources and a gcp database as proof terraform can make it easy to migrate resources from one provider to another. We also deployed our app into subnets within multiple availability zones for increase redundancy.
+For provisioning architecture we used terraform as its Open source, works across 100s of providers and has great documentation. Terraform plan was used to identify syntax errors and display a detailed plan of the resources to be created. We utilised modules to avoid duplication of code. We also used terraform to employ a multi provider approach with  both aws resources and a gcp database used. This shows how easy terraform makes it to migrate resources from one provider to another. We also deployed our app into subnets within multiple availability zones for increase redundancy.
 
 **kubernetes**
 
