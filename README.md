@@ -82,6 +82,8 @@ we included a new column for issues with the project so that these could be seen
 
 ![image4](https://user-images.githubusercontent.com/64256460/86958257-c6348b00-c153-11ea-9c58-944453333d96.png)
 
+[Sprint-Log](https://docs.google.com/document/d/1Uw2YPxtioq02BT7eTdzH7P2uTiU7O439x90h3ULEJp8/edit?usp=sharing)
+
 
 ---
 ## Risk Assessment
@@ -366,9 +368,7 @@ Fix
 
 Having a robust deployment means that images has to built , and push to docker hub through automation. An unrecognized problem occur which resulted in the team having to install another dependency “sudo apt install gnupg2 pass”.
 
-**Issue 7.**
 
-Fix
 
 ---
 ## Future Improvements
