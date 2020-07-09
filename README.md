@@ -198,11 +198,38 @@ In addition to this another reason why we decided to use kubernetes over docker 
 
 Jenkins pipeline
 
+![](Documents/jenkinspipe.PNG)
+
 We have chosen to use Jenkins due to personal preference and also due to the benefits of using a Jenkins file.
 
 Jenkinsfile benefits include:
 Code review/iteration on the Pipeline
 Audit trail for the Pipeline
+
+Stage 1
+Make script files executable:
+A crucial script for a jenkinsfile without this it would not be able to run the following stages 
+
+Stage 2 
+Prepare Environment:
+The first steps of stage 2 are installing docker and kubernetes. The jenkinsfile could of been made more efficient by using the terraform user data to install docker and kubernetes.
+The robust.sh script turns the most recent commit to the dev branch triggered by the webhook into docker images and pushes them up to docker hub ready to be called down by kubernetes.
+Stage 3
+Test Environment
+The backtest.sh script is the only test run in stage 3 due to time constraints we were unable to implement testing for the front end. 
+It's a simple script that changes into the backend directory, installs maven and runs the built in mvn test for the backend application. The results of the test can be viewed in the logs of the build.
+
+Stage 4
+Deploying with kubernetes
+The final stage is 1 script but is the most important part of the pipeline.
+The first step executes the .bashrc file which exports all of the necessary environment variables
+It then installs mysql-client-core-8.0 which is necessary for the next 2 steps
+The first mysql command in the script runs the initDB.sql file which creates the database and the tables
+The second sql command runs the populateDB.sql file which fills the sql tables with data
+The script then runs a kubectl apply on the frontend, backend and nginx yamls which brings up the application with terraform
+
+
+
 
 
 
