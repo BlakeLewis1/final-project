@@ -6,7 +6,6 @@ resource "google_sql_database" "database" {
 resource "google_sql_database_instance" "instance" {
   name   = "group-database-instance"
   region = var.region
-  provider = 
   settings {
     tier = "db-f1-micro"
   }

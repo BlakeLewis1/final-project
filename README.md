@@ -82,6 +82,10 @@ we included a new column for issues with the project so that these could be seen
 
 ![image4](https://user-images.githubusercontent.com/64256460/86958257-c6348b00-c153-11ea-9c58-944453333d96.png)
 
+[Sprint-Log](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/Sprint%20Backlog.pdf)
+
+Above is a link to our sprint backlog which has a rough example of what our sprints looked like and the time designated for the sprints are also available in this document.
+
 
 ---
 ## Risk Assessment
@@ -170,15 +174,16 @@ we also ensured that we revisited the risk assessment and addressed any clear is
 ### architecture design 
 **initial architecture design**
 
-![iad](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/intial%20architecture%20design%20.png)
+![intial](https://user-images.githubusercontent.com/64256460/87092069-b17af480-c232-11ea-9316-5bb664d8342b.png)
+
 
 **final architecture design**
 
-![ad](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/architecture%20design.png)
+![final](https://user-images.githubusercontent.com/64256460/87092099-c192d400-c232-11ea-8711-cbe65c704053.png)
 
-we had to change our initial design to make sure that the database was able to be displayed correctly through the front end of the app to do this we employed a new solution for the app. this included utilising a gcp mysql instance to hold the database.
+we had to change our initial design to make sure that the database was able to be displayed correctly through the front end of the app to do this we employed a new solution for the app. Due to the competitiveness of today's cloud marketplace. so we incuded a gcp database instaed of a a aws rds. we thought having a multi provider approach using both AWS and GCP resources would showcase flexibility of the business opportunities group 3 can provide. along with this the intial design was to have a bastian host. 
 
-We needed to utilise the gcp sql rather than using the amazon rds system as we encountered persistent issues with connections between front and back ends whilst attempting to use the amazon rds system.
+In the final design we got rid of the bastian host and made the worker node also the jenkins machine due the time constraints and having increase the computing power of the ec2 machine.
 
 
 ### Technology comparisons
@@ -323,7 +328,7 @@ EC2 configuration – using an T2 micro and ubuntu 16 image. The ram of the mach
 
 Fix 
 
-We increased the size of the machine to a t2 medium with 2CPU. Along with this we used an ubuntu 20 Ami image. This resulted in not only being able to build/run the application but install the software faster. The major benefit was the group was able to use this EC2 as the Jenkins machine and also the manager node in the eks cluster.
+We increased the size of the machine to a t2 medium with 2CPU. Along with this we used an ubuntu 18 Ami image. This resulted in not only being able to build/run the application but install the software faster. The major benefit was the group was able to use this EC2 as the Jenkins machine and also the manager node in the eks cluster.
 
 **Issue 2.**
 
@@ -365,9 +370,7 @@ Fix
 
 Having a robust deployment means that images has to built , and push to docker hub through automation. An unrecognized problem occur which resulted in the team having to install another dependency “sudo apt install gnupg2 pass”.
 
-**Issue 7.**
 
-Fix
 
 ---
 ## Future Improvements
@@ -398,7 +401,7 @@ Fix
 9.	Still in the folder, run the command terraform apply. The ec2 created will take a little wile to configure as Jenkins/Kubernetes is being installed. 
 10.	SSH into the new EC2 created by following the instruction on the aws console. “take note you’ll need the secret key you created in step 4.
 11.	Git clone down the repository again as this machine is also the master node.
-12.	run the command “sudo su Jenkins” then vim ~/.bashrc. finally copy then configure the following into file then save. 
+12.	run the command “sudo su jenkins” then vim ~/.bashrc. finally copy then configure the following into file then save. 
 *	export url=jdbc:mysql://<databse ip>:3306/petclinic?useUnicode=true
 * export host="database ip"
 *	export password= "chose password"
