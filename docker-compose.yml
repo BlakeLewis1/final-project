@@ -8,14 +8,14 @@ services:
 
   backend:
     image: jasonsinclair95/coolgroup:backend
-    build: ./spring-petclinic-angular
+    build: ./spring-petclinic-rest.
     ports:
       - 9966:9966
     container_name: backend
   
   frontend:
     image: jasonsinclair95/goup3:frontend
-    build: ./spring-petclinic-rest
+    build: ./spring-petclinic-angular
     depends_on:
       - backend
     ports:
