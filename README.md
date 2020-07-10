@@ -1,4 +1,4 @@
-# final-project-team3
+# Final-Project-Team3
 
 ## Pet-Clinic Web Application
 ### Contents
@@ -60,11 +60,8 @@ The External applications work in a way that the frontend will communicate with 
 * EKS to orchestrate the containers which will run the applications.
 * CI Server - Jenkins functioning as pipeline with Webhooks from the version control GIt Hub, to trigger builds.
 
-### Summary 
-
 ---
 ## Project Tracking
-
 
 **Intial trello board :**
 
@@ -85,8 +82,19 @@ we included a new column for issues with the project so that these could be seen
 
 ![image4](https://user-images.githubusercontent.com/64256460/86958257-c6348b00-c153-11ea-9c58-944453333d96.png)
 
+[Sprint-Log](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/Sprint%20Backlog.pdf)
+
+Above is a link to our sprint backlog which has a rough example of what our sprints looked like and the time designated for the sprints are also available in this document.
+
+
 ---
 ## Risk Assessment
+[RA](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/Project%20RA%20-%20Sheet1.pdf)
+
+linked above is the risk assessment for the project for ease of viewing it is reccomended that you download the file.
+
+This risk assessment displays the different possible risks that could occur during the development of our project the assessment is to be updated at different  time  intervals whilst developing our solution to be able to give an insight of how each risk progressed we have added a risk level which essentially is a sum of (**liklihood**) the possibility of the risk happening and (**impact**) the damage level the risk would have on the project if it did occur.
+
 
 
 **initial interval 02/07/20 ~ 04/07/20**
@@ -162,65 +170,72 @@ we also ensured that we revisited the risk assessment and addressed any clear is
 ---
 ## Architecture
 
+
 ### architecture design 
 **initial architecture design**
 
-![iad](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/intial%20architecture%20design%20.png)
+![intial](https://user-images.githubusercontent.com/64256460/87092069-b17af480-c232-11ea-9316-5bb664d8342b.png)
+
 
 **final architecture design**
 
-![ad](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/architecture%20design.png)
+![final](https://user-images.githubusercontent.com/64256460/87092099-c192d400-c232-11ea-8711-cbe65c704053.png)
 
-we had to change our initial design to make sure that the database was able to be displayed correctly through the front end of the app to do this we employed a new solution for the app. this included utilising a gcp mysql instance to hold the database.
+we had to change our initial design to make sure that the database was able to be displayed correctly through the front end of the app to do this we employed a new solution for the app. Due to the competitiveness of today's cloud marketplace. so we incuded a gcp database instaed of a a aws rds. we thought having a multi provider approach using both AWS and GCP resources would showcase flexibility of the business opportunities group 3 can provide. along with this the intial design was to have a bastian host. 
 
-We needed to utilise the gcp sql rather than using the amazon rds system as we encountered persistent issues with connections between front and back ends whilst attempting to use the amazon rds system.
+In the final design we got rid of the bastian host and made the worker node also the jenkins machine due the time constraints and having increase the computing power of the ec2 machine.
+
 
 ### Technology comparisons
 
-![image](https://user-images.githubusercontent.com/64256460/86617129-b7f93a00-bfae-11ea-90b5-4f84591bc2a9.png)
+**terraform**
 
-The decision for containerisation orchestration was to choose between Docker Swarm and Kubernetes. 
+For provisioning architecture we used terraform as its Open source, works across 100s of providers and has great documentation. Terraform plan was used to identify syntax errors and display a detailed plan of the resources to be created. We utilised modules to avoid duplication of code. We also used terraform to employ a multi provider approach with  both aws resources and a gcp database used. This shows how easy terraform makes it to migrate resources from one provider to another. We also deployed our app into subnets within multiple availability zones for increase redundancy.
 
-Kubernetes, otherwise known as k8s, is an open-source solution for automating deployments of containerized applications which is made by Google. Kubernetes has many solutions for managing and scaling very large quantities of containers by grouping them into manageable units. Because Kubernetes is open-source, it can be deployed as an on-premises, hybrid or public cloud solution.  
+**kubernetes**
+
+The reason we chose to use kubernetes is due to its advanced monitoring and ability to manage and scale up large clusters of pods. Kubernetes manages nodes and performs constant health checks and reboot of failing pods. EKS can easily perform rolling updates with no downtime.  Due to the benefits large organisations all use it over docker swarm. Downside we had very little experience and understanding of pod communication and service types. 
+In addition to this another reason why we decided to use kubernetes over docker swarm was that it was easier to update images by using kubectl apply to make updates to the image whilst with docker you would be required to build the image using docker image build  which would take up time rebuilding the image.
+
+**Jenkins_Pipeline**
+
+Jenkins pipeline
+
+![](Documents/jenkinspipe.PNG)
+
+We have chosen to use Jenkins due to personal preference and also due to the benefits of using a Jenkins file.
+
+Jenkinsfile benefits include:
+Code review/iteration on the Pipeline
+Audit trail for the Pipeline
+
+Stage 1
+Make script files executable:
+A crucial script for a jenkinsfile without this it would not be able to run the following stages 
+
+Stage 2 
+Prepare Environment:
+The first steps of stage 2 are installing docker and kubernetes. The jenkinsfile could of been made more efficient by using the terraform user data to install docker and kubernetes.
+The robust.sh script turns the most recent commit to the dev branch triggered by the webhook into docker images and pushes them up to docker hub ready to be called down by kubernetes.
+Stage 3
+Test Environment
+The backtest.sh script is the only test run in stage 3 due to time constraints we were unable to implement testing for the front end. 
+It's a simple script that changes into the backend directory, installs maven and runs the built in mvn test for the backend application. The results of the test can be viewed in the logs of the build.
+
+Stage 4
+Deploying with kubernetes
+The final stage is 1 script but is the most important part of the pipeline.
+The first step executes the .bashrc file which exports all of the necessary environment variables
+It then installs mysql-client-core-8.0 which is necessary for the next 2 steps
+The first mysql command in the script runs the initDB.sql file which creates the database and the tables
+The second sql command runs the populateDB.sql file which fills the sql tables with data
+The script then runs a kubectl apply on the frontend, backend and nginx yamls which brings up the application with terraform
 
 
-Docker swarm is docker's containerisation orchestration tool. Like kubernetes, is open source swarm is designed around four core principles. 
 
-Less cluttered/heavy and with just working methodology 
 
-No Single Point of Failure option for Docker Swarm 
 
-Secure due to auto-generation of security certificates. 
 
-Compatibility with Backward versions easily. 
-
- The comparison 
-
-There are fundamental differences even though both are containerisation orchestration tools.  
-
-Swarm focuses on ease of use with integration with Docker core components and also has an easier installation process while Kubernetes has a more manual installation process and remains open and modular. Kubernetes is also older than docker and therefore there are years of expert experience at hand to help.  
-
-One of the main reasons why we decided to use kubernetes over docker swarm was that it was easier to update images by using kubectl apply to make updates to the image whilst with docker you would be required to build the image using docker image build  which would take up time rebuilding the image.  
-
-![image](https://user-images.githubusercontent.com/64256460/86617227-d95a2600-bfae-11ea-8424-80728af05f24.png)
-
-Terraform allows you to control your infrastructure.Terraform uses HCL (HashiCorp Configuration Language), developed to strike a balance between being human readable as well as machine-friendly. Using infrastructure as code this means that the code used can be of a high level to describe and manage infrastructure. 
-
-In Terraform, you can run a ‘plan’ step before applying any changes. This step tells you precisely what is going to change and why and also has colours highlighting these changes. 
-
-CloudFormation is a tool from AWS that allows you to spin up resources effortlessly. You define all the resources you want AWS to spin up in a blueprint document made in either JSON or YAML. With CloudFormation you are able to see and design your infrastructure with the designer. 
-
-When deciding which tool to use , terraform or cloud formation we focused on personal preference in the group and went with what the majority of the group felt comfortable with and with that in mind the group decided that terraform was the best tool to use for setting up the infrastructure of the deployment for the app on of the main reasons we decided to use terraform was that it was easier to use .ts files rather than using cloudformation and  .yml files because yaml files are prone to failing when there are indentation errors in the code. Terraform also validates the config file before running it. 
-
-![image](https://user-images.githubusercontent.com/64256460/86617295-ed9e2300-bfae-11ea-8493-4e9095141900.png)
-
-Terraform allows you to control your infrastructure.Terraform uses HCL (HashiCorp Configuration Language), developed to strike a balance between being human readable as well as machine-friendly. Using infrastructure as code this means that the code used can be of a high level to describe and manage infrastructure. 
-
-In Terraform, you can run a ‘plan’ step before applying any changes. This step tells you precisely what is going to change and why and also has colours highlighting these changes. 
-
-CloudFormation is a tool from AWS that allows you to spin up resources effortlessly. You define all the resources you want AWS to spin up in a blueprint document made in either JSON or YAML. With CloudFormation you are able to see and design your infrastructure with the designer. 
-
-When deciding which tool to use , terraform or cloud formation we focused on personal preference in the group and went with what the majority of the group felt comfortable with and with that in mind the group decided that terraform was the best tool to use for setting up the infrastructure of the deployment for the app on of the main reasons we decided to use terraform was that it was easier to use .ts files rather than using cloudformation and  .yml files because yaml files are prone to failing when there are indentation errors in the code. Terraform also validates the config file before running it. 
 
 ---
 ## Deployment
@@ -236,20 +251,174 @@ Eks. The Eks Cluster has three separate Deployments, frontend application, backe
 
 An multi provider approach was considered due to the competitiveness of todays cloud marketplace. This was completed by utilising an GCP Mysql database and Aws resources applied by terraform. This skillset showcases flexibility of the business opportunities group3 can provide.
 
+![](Documents/ProcessChainDiagram.png)
+
+To elaborate on some of the technologies used in the CI pipeline is as follows:
+
+* Microsoft Teams - to host our Daily Scrums.
+* Trello - Project Tracking tool. This tool was used to create our sprints and allow the team to keep up to date with what work is being done.
+* Terraform - to create the aws ecosystem along with a GCP Mysql Database. 
+* Trello board to keep track of the project progress.
+* GitHub: allows the source code to be stored and also webhooks are created which trigger the Ci server to build the pipeline and run the application.
+* Jenkins
+* Maven - test the backend application using the pre-configured test files.
+* Docker - containerises our application.
+* EKS - orchestrates the container created by docker. which then deploys the application.
+* AWS - hosting our resources and enabling monitoring so that the group can be emailed alarmed.
 
 ---
 ## Testing
 ![](Documents/testoutput.PNG)
 
 Testing for the backend was built into the Jenkins pipeline. We run a mvn test which is then displayed in Jenkins logs where it can be checked for any errors.
-Due to time constraints and concern for wasting machine resources the built-in testing for the frontend was not implemented into Jenkins.  
 
+Due to time constraints and concern for wasting machine resources the built-in testing for the frontend was not implemented into Jenkins.
+
+We encountered an issue when it came to implementing automated testing with the front-end application as it required human interaction to run the debugger. Therefor running the ng test command seems like a waste of resources as automation is the goal of the project. 
+
+---
+## Monitoring
+For the project we looked at our budget and decided it would be beneficial to enable advanced monitoring in AWS cloud watch for our EC2. This enabled us to setup alerts that would constantly monitor the machine. Whenever an alarm is triggered an email is sent too everybody in the group lowering the risk of the alarm being missed.
+We setup 2 alarms for our EC2 instance
+![](Documents/highcpualarm.PNG)
+This alarm would trigger if cpu utilization of the machine exceeds 75% which should be very unlikely due to the workload being balanced between multiple machines
+![](Documents/machinefailalarm.PNG)
+This alarm was created to warn everyone if the machine powers off for longer than 1 minute unexpectedly.
+
+---
+
+## Cost analysis
+#### Total Costs
+![](Documents/currentbilling.PNG)
+![](Documents/billingcircle.PNG)
+we started off with deciding which resources were going to be required for the project and also took into consideration the cost  of each resource consequently we had to research different methods to complete things and we analysed using this research what was going to be the most cost effective method and the forecasted costs chart shows that our deployment method will be under the £20 budget that QA had setup for us in the beginning of the project 
+
+The eks was one of the biggest costs for the project at the time of writing the EKS cluster has been running for 22 hours and was 34.2% of our total expense. If the website was receiving more requests it would definitely become the most expensive service used in the application.
+
+Due to the application utilising the EKS service the free tier t2.micro cpu was not suitable. Therefore the EC2 instances ended up being our largest expense at 48.7% of total cost.
+Total cost for EC2:
+![](Documents/costtable.PNG)
+As you can see above the EKS creates 2 t3 medium instances and 1 t2 medium instance. The t3 medium was the most expensive resource as of writing.
+
+In conclusion after analysing the costs it's clear that the cost of this project could have been reduced if we used the ingress method, however we had already experimented with this and attempted at the start to implement this method but it became too complex and could have led to the project not being completed within time.
+
+
+#### Expected Cost
+![](Documents/barchart.png)
+As you can see above the expected cost for the rest of the month at the time of writing (July 09) is $13.81. However we believe this prediction is inaccurate as during development the machines have been turned off over night and the project was started a few days into the month making the overall estimate inaccurate.
 
 ---
 ## Conclusion
+In conclusion as a team we have been able to utilise the agile methodology and also the scrum 
+framework to successfully build our deployment for the pet clinic app. Examples of this include 
+starting every day with a daily scrum meeting and used sprint retrospectives at the end of the sprints and deciding upon actions for the next iteration therefore sticking to the scrums incremental nature.We also held mini sprint reviews to show how much progress was being made with the project.
+
+ After holding our final sprint retrospective provided evidence that using the scrum framework has enabled the group to be able to work efficiently by using sprints that were used to set out in sprint planning.
+
+whilst completing the project their were issues that we came across these were therefore added to the trello board in the form of issues however these were effectively our product backlog artifact, consequently this was to ensure that the team were aware of them and therefore were able to tackle these specific issues this helped the team to work more effectively 
+
+What we would do better in the future I would have liked to have the backlog properly documented in the README.md and be able to work
+
+---
+## ISSUES 
+
+**Issue1**
+
+EC2 configuration – using an T2 micro and ubuntu 16 image. The ram of the machine used was to small and the version of the ubuntu was out dated to install the correct software to run/build the docker images for both the back end and front application.
+
+Fix 
+
+We increased the size of the machine to a t2 medium with 2CPU. Along with this we used an ubuntu 18 Ami image. This resulted in not only being able to build/run the application but install the software faster. The major benefit was the group was able to use this EC2 as the Jenkins machine and also the manager node in the eks cluster.
+
+**Issue 2.**
+
+EKS not working. Some of the reasons for this was as following:
+
+The nginx service which was deployed by the cluster. This service works as a load balancer and the load balancer it self could not find the worker nodes in the cluster in the specified availability zones. The incorrect images was being pulled down by git hub.
+
+Fix .
+
+The terraform subnets had to use a different cidr block as the current cidrs was taken. It was changed from 10.0… to 10.50. after this the load balancer could find the worker nodes that had been deployed. Docker images had to be re built and pushed to the docker repository. Along with this the image had to have been built with the correct environment variable exported.
+
+**Issue 3.**
+
+Jenkins pipeline build – the build would not allow the EKS to deploy the Kubernetes yamls into the cluster.
+
+Fix – we had to run the command aws configure inside Jenkins so thath jenkis had access to the AWS consol. A separate Jenkins user was created.
+
+**Issue 4.**
+
+Terraform not being able to destroy AWS resources. 
+
+Without having te correct permission some resources could not be deleted unless the action was done by the root user. The main reason was because some resources depend on others for example the RDS database utilises a network which was connect to the rest of the architecture.
+
+Fix delete the RDS instance manually then run terraform destroy again.
+
+**Issue 5.**
+
+Communication between containers. The front end back end application was not able to communicate through containerisation.
+
+Fix 
+
+create a nginx container and reverse proxy so that the container listen on port 80 for both the front end and backend application. After which the frontend application had to be configure so that it had the correct back end point location.
+
+**Issue 6.**
+
+login into docker hub via the terminal. 
+
+Fix
+
+Having a robust deployment means that images has to built , and push to docker hub through automation. An unrecognized problem occur which resulted in the team having to install another dependency “sudo apt install gnupg2 pass”.
+
+
+
+---
+## Future Improvements
+
+* Soley use the aws ec2 user data to create the enviroment similar to ansible rather than using a build from jenkins 
+  by doing this we are making the source code more efficient. 
+
+*  Look into using Fargate for deploying kubernetes as a serverless architecture would better suit our app. 
+
+*  Implement a lambda function that could take snapshots of the AMI for disaster recovery.
+
+*  Implement x-ray to optimize request flows.  
+
+*  Run stress testing.
+
+*  Use codepipeline removing the need for a jenkins server.
 
 ---
 ## Set up guide
+1.  Create or login to your AWS account.
+2.	In the console change the region to eu-west-1.
+3.	Create an IAM user and attach the Administrator Access and save the credentials for later use.
+4.	Generate an pem key and name it AWSKey.pem and save the key in a secure location on your machine.
+5.	Clone down the repository … and cd into the Terraform file.
+6.	Install the aws-cli then execute the command “aws configure” in your terminal. This will prompt you to enter the access key and secret key of the user your created which can be found in the file you saved in step 3.
+7.	Install terraform following this guide.
+8.	Still in the Terraform file, run the command terraform init followed by terraform plan. Here you can see all of the resources which will be created in your aws consol. 
+9.	Still in the folder, run the command terraform apply. The ec2 created will take a little wile to configure as Jenkins/Kubernetes is being installed. 
+10.	SSH into the new EC2 created by following the instruction on the aws console. “take note you’ll need the secret key you created in step 4.
+11.	Git clone down the repository again as this machine is also the master node.
+12.	run the command “sudo su jenkins” then vim ~/.bashrc. finally copy then configure the following into file then save. 
+*	export url=jdbc:mysql://<databse ip>:3306/petclinic?useUnicode=true
+* export host="database ip"
+*	export password= "chose password"
+*	export username= "chose username"
+*	export driver_class_name=com.mysql.jdbc.Driver
+13.	In the aws console get the ip of the ec2 and paste it into the url like so http://<EC2 Ip Address:8080/
+14.	cat initial password out of your ec2 terminal then enter on the Jenkins welcome page
+15.	Following the commands prompted by Jenkins - install all plugins and create an Jenkins account. 
+16.	Once Jenkins is initiated create a new item and follow the steps.
+
+*	pipeline build 
+*	git project checked – paste in the url of the repository you cloned  
+*	git webhooks checked – paste in the url again 
+*	select the dev branch and apply.
+17.	Using the guide found here configure your copy of the repository to allow webhooks.
+18.	Run the Jenkins pipeline by clicking build. The system is set to work in robust way as seen in the robust script of the Jenkins file. so you may need to log into your docker account before running the pipeline.
+
 
 ---
 
