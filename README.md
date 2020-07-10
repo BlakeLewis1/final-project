@@ -91,7 +91,7 @@ Above is a link to our sprint backlog which has a rough example of what our spri
 ## Risk Assessment
 [RA](https://github.com/BlakeLewis1/final-project/blob/dev/Documents/Project%20RA%20-%20Sheet1.pdf)
 
-linked above is the risk assessment for the project for ease of viewing it is reccomended that you download the file
+linked above is the risk assessment for the project for ease of viewing it is reccomended that you download the file.
 
 This risk assessment displays the different possible risks that could occur during the development of our project the assessment is to be updated at different  time  intervals whilst developing our solution to be able to give an insight of how each risk progressed we have added a risk level which essentially is a sum of (**liklihood**) the possibility of the risk happening and (**impact**) the damage level the risk would have on the project if it did occur.
 
